@@ -4,7 +4,7 @@ services:
     repo: https://github.com/5weeeeet/pfmarketing.git
     branch: git_project
     buildCommand: ""
-    publishPath: "/"
+    publishPath: "."
     plan: free
 
 # Note: Adjust `branch`, `repo`, `buildCommand` or `publishPath` as needed.
