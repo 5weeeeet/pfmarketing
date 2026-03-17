@@ -858,7 +858,7 @@
                 <h2 class="card-title" style="margin: 60px 0 20px;">Что говорят о нас клиенты</h2>
                 <div class="reviews-grid">
                     <div class="review-card">
-                        <div class="review-photo"><img src="/assets/reviews/review1.jpg" alt="Алексей, автосервис"></div>
+                        <div class="review-photo"><img src="/assets/reviews/review1.jpeg" alt="Алексей, автосервис"></div>
                         <div class="review-content">
                             <div class="review-author">Алексей, автосервис</div>
                             <div class="review-text">"Заказал ПФ на 3 дня — объявление в топе вторую неделю. Заявки каждый день. Спасибо!"</div>
@@ -866,7 +866,7 @@
                         </div>
                     </div>
                     <div class="review-card">
-                        <div class="review-photo"><img src="/assets/reviews/review2.jpg" alt="Екатерина, недвижимость"></div>
+                        <div class="review-photo"><img src="/assets/reviews/review2.jpeg" alt="Екатерина, недвижимость"></div>
                         <div class="review-content">
                             <div class="review-author">Екатерина, недвижимость</div>
                             <div class="review-text">"Накрутили отзывы, подняли рейтинг. Стали доверять больше, продажи выросли в 2 раза."</div>
@@ -874,7 +874,7 @@
                         </div>
                     </div>
                     <div class="review-card">
-                        <div class="review-photo"><img src="/assets/reviews/review3.jpg" alt="Дмитрий, электроника"></div>
+                        <div class="review-photo"><img src="/assets/reviews/review3.jpeg" alt="Дмитрий, электроника"></div>
                         <div class="review-content">
                             <div class="review-author">Дмитрий, электроника</div>
                             <div class="review-text">"Боялся бана, но всё чисто. Уже месяц в топе, ПФ отключил — позиции держатся."</div>
@@ -882,7 +882,7 @@
                         </div>
                     </div>
                     <div class="review-card">
-                        <div class="review-photo"><img src="/assets/reviews/review4.jpg" alt="Ольга, одежда"></div>
+                        <div class="review-photo"><img src="/assets/reviews/review4.jpeg" alt="Ольга, одежда"></div>
                         <div class="review-content">
                             <div class="review-author">Ольга, одежда</div>
                             <div class="review-text">"Сделали объявление под ключ + инфографика. Отличаемся от конкурентов, клиенты звонят."</div>
@@ -969,7 +969,7 @@
                     
                     <div class="social-links">
                         <a href="https://t.me/avitop_pro_owner"" class="social-link">📱 Telegram</a>
-                        <a href="https://wa.me/79898219218"" class="social-link">📞 WhatsApp</a>
+                        <a href="https://wa.me/79898219218" class="social-link">📞 WhatsApp</a>
                         <a href="tel:+79898219218" class="social-link">📞 Позвонить</a>
                     </div>
                     
@@ -1045,8 +1045,8 @@
                     fields.forEach(f=>{ if(f.placeholder) data[f.placeholder]=f.value.trim(); });
                     let text = `Заявка с сайта ${location.hostname} — ${document.title}\n`;
                     for(const k in data){ if(data[k]) text += `${k}: ${data[k]}\n`; }
-                    const url = 'https://t.me/share/url?url=&text=' + encodeURIComponent(text);
-                    window.open(url,'_blank');
+                    const url = 'https://wa.me/79898219218?text=' + encodeURIComponent(text);
+                    const opened = window.open(url,'_blank');\n                    if (!opened) { window.location.href = url; }
                 });
             });
         })();
@@ -1102,6 +1102,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
