@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: pfmarketing-static
+    env: static
+    repo: https://github.com/5weeeeet/pfmarketing.git
+    branch: git_project
+    buildCommand: ""
+    publishPath: "/"
+    plan: free
+
+# Note: Adjust `branch`, `repo`, `buildCommand` or `publishPath` as needed.
+# You can also skip this file and create the Static Site from the Render dashboard.
