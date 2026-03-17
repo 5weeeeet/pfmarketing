@@ -81,71 +81,53 @@
 		.contacts { background: rgba(20,24,28,0.6); padding:30px; border-radius:12px; margin-top:30px }
 		h1, h2, h3 { text-align: center; }
 		a.contact-link { color:#5D9BFF; text-decoration:none }
-	        @media (max-width: 900px) {
-            .header .container { position: relative; }
-            .nav {
-                display: none;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                flex-direction: column;
-                gap: 12px;
-                background: rgba(10, 12, 15, 0.95);
-                border: 1px solid rgba(93, 155, 255, 0.2);
-                padding: 14px;
-                border-radius: 16px;
-                width: min(260px, 90vw);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-            }
-            .nav.open { display: flex; }
-            .nav a { padding: 6px 4px; }
-		.nav-toggle { display: inline-flex; }
-            .header-contacts { gap: 10px; }
-            .phone-link { font-size: 14px; }
-        }
-            .global-center { }
-        h1, h2, h3 {
-            text-align: center;
-        }
 
-        .section-title,
-        .card-title,
-        .card-title-light {
-            text-align: center;
-        }
+		@media (max-width: 900px) {
+			.header .container { position: relative; }
+			.nav {
+				display: none;
+				position: absolute;
+				top: 60px;
+				right: 0;
+				flex-direction: column;
+				gap: 12px;
+				background: rgba(10, 12, 15, 0.95);
+				border: 1px solid rgba(93, 155, 255, 0.2);
+				padding: 14px;
+				border-radius: 16px;
+				width: min(260px, 90vw);
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+			}
+			.nav.open { display: flex; }
+			.nav a { padding: 6px 4px; }
+			.nav-toggle { display: inline-flex; }
+			.header-contacts { gap: 10px; }
+			.phone-link { font-size: 14px; }
+		}
 
-        .card {
-            text-align: center;
-        }
+		.max-float {
+			position: fixed;
+			right: 20px;
+			bottom: 20px;
+			padding: 14px 16px;
+			border-radius: 999px;
+			background: #0f172a;
+			color: #fff;
+			text-decoration: none;
+			font-weight: 700;
+			z-index: 9999;
+			box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
+		}
+		.max-float:hover { transform: translateY(-1px); }
 
-        .card p,
-        .feature-list {
-            text-align: left;
-        }
-            .max-float {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            padding: 14px 16px;
-            border-radius: 999px;
-            background: #0f172a;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            z-index: 9999;
-            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
-        }
-        .max-float:hover { transform: translateY(-1px); }
-        .feature-list { text-align: center; list-style-position: inside; padding-left: 0; }
-        .feature-list li { margin-left: 0; }
-        /* Center override */
-        body { text-align: center; }
-        h1, h2, h3, p, li { text-align: center; }
-        .card, .section, .container { text-align: center; }
-        .card p, .feature-list { text-align: center !important; }
-        .feature-list { list-style: disc; list-style-position: inside; padding-left: 0; }
-        .feature-list li { padding-left: 0; }
-        .feature-list li::before { content: none; }</style>
+		/* Center override */
+		body { text-align: center; }
+		h1, h2, h3, p, li { text-align: center; }
+		.card, .section, .container { text-align: center; }
+		.feature-list { list-style: disc; list-style-position: inside; padding-left: 0; }
+		.feature-list li { padding-left: 0; }
+		.feature-list li::before { content: none; }
+	</style>
 </head>
 <body>
 	<div class="wrapper">
