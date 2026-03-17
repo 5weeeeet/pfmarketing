@@ -6,7 +6,9 @@
     <title>Аудит бизнеса и сайта | IT-экспертиза | AVITOP</title>
     <meta name="description" content="Аудит бизнеса целиком: от анализа рынка до технической основы сайта. 15 лет опыта в IT. Честный разбор без воды. Бесплатная консультация.">
     
-    <!-- Библиотека частиц -->
+        <link rel="canonical" href="https://pfmarketing.ru/audit/">
+    <meta name="robots" content="index,follow">
+<!-- Библиотека частиц -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <!-- Шрифты -->
@@ -410,6 +412,7 @@
             gap: 10px;
             margin: 20px 0;
             pointer-events: auto;
+            justify-content: center;
         }
         
         .niche-tag {
@@ -428,6 +431,7 @@
             color: #0A0C0F;
             border-color: #5D9BFF;
         }
+        h1, h2, h3 { text-align: center; }
         
         /* Форма */
         .contact-form {
@@ -502,12 +506,20 @@
             align-items: center;
             color: #6B7280;
             font-size: 14px;
+            gap: 16px;
+            flex-wrap: wrap;
         }
+        .footer a { color: #A0A8B5; text-decoration: none; }
+        .footer a:hover { color: #5D9BFF; }
         
         /* Адаптив */
         @media (max-width: 768px) {
             .grid-2, .grid-3 { grid-template-columns: 1fr; }
             .hero-small h1 { font-size: 36px; }
+            .niche-tag { flex: 1 1 calc(50% - 10px); text-align: center; }
+        }
+        @media (max-width: 520px) {
+            .niche-tag { flex: 1 1 100%; }
         }
             @media (max-width: 900px) {
             .header .container { position: relative; }
@@ -571,6 +583,7 @@
                     <a href="/">Главная</a>
                     <a href="/pf/">ПФ и отзывы</a>
                     <a href="/sites/">Сайты под ключ</a>
+                    <a href="/prices/">Цены</a>
                     <a href="/contacts/">Контакты</a>
                 </nav>
 
@@ -612,7 +625,6 @@
                 
                 <!-- Ниши (честность) -->
                 <div style="margin: 50px 0; pointer-events: auto;">
-                    <div class="badge badge-warning">Важно</div>
                     <h2 class="card-title" style="margin-bottom: 20px;">С какими нишами работаю</h2>
                     <div class="niche-tags">
                         <span class="niche-tag">IT и SaaS</span>
@@ -724,7 +736,7 @@
                     
                     
                     <div style="margin-top: 30px; color: #6B7280;">
-                        Или напишите в Telegram: <a href="https://t.me/avitop_pro_owner" style="color: #5D9BFF; text-decoration: none;">@avitop_pro_owner</a>
+                        Напишите в Telegram / MAX или позвоните: <a href="https://t.me/avitop_pro_owner" style="color: #5D9BFF; text-decoration: none;">@avitop_pro_owner</a> · <a href="tel:+79898219218" style="color: #5D9BFF; text-decoration: none;">+7 989 821-92-18</a>
                     </div>
                 </div>
             </div>
@@ -735,6 +747,11 @@
             <div class="container">
                 <div>© 2023-2025 AVITOP — Аудит бизнеса и IT-консалтинг</div>
                 <div>+7 989 821-92-18 | @avitop_pro_owner</div>
+                <div>
+                    <a href="/privacy/">Политика конфиденциальности</a>
+                    <span> · </span>
+                    <a href="/sitemap/">Карта сайта</a>
+                </div>
             </div>
         </footer>
     </div>
@@ -831,6 +848,7 @@
     </script>
 </body>
 </html>
+
 
 
 

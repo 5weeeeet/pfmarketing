@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта сайта | PFmarketing.ru</title>
+    <meta name="description" content="Карта сайта PFmarketing.ru — быстрые ссылки на основные разделы.">
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0A0C0F; color: #E0E4E9; line-height: 1.6; }
+        #particles-js { position: fixed; inset: 0; z-index: 0; background: #0A0C0F; pointer-events: none; }
+        .wrapper { position: relative; z-index: 1; min-height: 100vh; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .header { padding: 16px 0; border-bottom: 1px solid rgba(93, 155, 255, 0.1); backdrop-filter: blur(10px); background: rgba(10, 12, 15, 0.8); position: sticky; top: 0; z-index: 10; }
+        .header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: -0.5px; }
+        .nav { display: flex; gap: 32px; }
+        .nav a { color: #E0E4E9; text-decoration: none; font-size: 15px; font-weight: 500; }
+        .nav a:hover { color: #5D9BFF; }
+        .nav-toggle { display: none; width: 42px; height: 42px; border-radius: 12px; border: 1px solid rgba(93, 155, 255, 0.35); background: rgba(20, 24, 28, 0.7); align-items: center; justify-content: center; gap: 5px; cursor: pointer; }
+        .nav-toggle span { display: block; width: 20px; height: 2px; background: #E0E4E9; border-radius: 2px; }
+        .header-contacts { display: flex; align-items: center; gap: 16px; }
+        .phone-link { color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px; }
+        .tg-link { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #5D9BFF; border-radius: 50%; transition: all 0.3s; }
+        .tg-link:hover { background: #BD7AFF; transform: translateY(-2px); }
+        .tg-link svg { width: 20px; height: 20px; fill: #0A0C0F; }
+        .breadcrumbs { padding: 20px 0; font-size: 14px; color: #6B7280; }
+        .breadcrumbs a { color: #6B7280; text-decoration: none; }
+        .breadcrumbs span { color: #E0E4E9; }
+        .section { padding: 30px 0 60px; }
+        h1, h2, h3 { text-align: center; }
+        h1 { font-size: 38px; margin-bottom: 16px; }
+        .card { background: rgba(20, 24, 28, 0.6); border: 1px solid rgba(93, 155, 255, 0.15); border-radius: 24px; padding: 28px; }
+        .site-list { list-style: none; display: grid; gap: 12px; margin-top: 20px; }
+        .site-list a { color: #5D9BFF; text-decoration: none; font-weight: 500; }
+        .footer { padding: 30px 0; border-top: 1px solid rgba(93, 155, 255, 0.1); text-align: center; color: #A0A8B5; font-size: 14px; }
+        .footer a { color: #A0A8B5; text-decoration: none; }
+        .footer a:hover { color: #5D9BFF; }
+        @media (max-width: 980px) {
+            .header .container { flex-wrap: wrap; gap: 16px; }
+            .nav { display: none; flex-direction: column; gap: 14px; width: 100%; padding: 16px; background: rgba(10, 12, 15, 0.95); border: 1px solid rgba(93, 155, 255, 0.2); border-radius: 16px; }
+            .nav.open { display: flex; }
+            .nav-toggle { display: inline-flex; }
+            .header-contacts { width: 100%; justify-content: space-between; }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <a href="/" class="logo">PFmarketing.ru</a>
+                <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <nav class="nav">
+                    <a href="/avitolog/">Авитолог</a>
+                    <a href="/pf/">ПФ и отзывы</a>
+                    <a href="/audit/">Аудит</a>
+                    <a href="/sites/">Сайты под ключ</a>
+                    <a href="/prices/">Цены</a>
+                    <a href="/contacts/">Контакты</a>
+                </nav>
+                <div class="header-contacts">
+                    <a href="tel:+79898219218" class="phone-link">+7 989 821-92-18</a>
+                    <a href="https://t.me/avitop_pro_owner" target="_blank" class="tg-link" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248c-.183 1.92-.978 6.58-1.382 8.728-.171.912-.51 1.217-.837 1.247-.712.066-1.252-.47-1.942-.922-1.078-.706-1.688-1.145-2.735-1.834-1.21-.796-.426-1.234.264-1.95.18-.187 3.286-3.012 3.346-3.27.007-.032.014-.15-.056-.212-.07-.063-.173-.042-.248-.024-.106.025-1.79 1.137-5.053 3.34-.478.328-.91.488-1.298.48-.427-.01-1.25-.242-1.862-.44-.75-.244-1.346-.373-1.294-.787.027-.216.325-.438.893-.664 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.1-.002.323.023.468.14.117.097.15.226.166.318.015.092.034.302.019.466z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="/">Главная</a> / <span>Карта сайта</span>
+            </div>
+        </div>
+
+        <main class="section">
+            <div class="container">
+                <h1>Карта сайта</h1>
+                <div class="card">
+                    <ul class="site-list">
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/avitolog/">Авитолог</a></li>
+                        <li><a href="/pf/">ПФ и отзывы</a></li>
+                        <li><a href="/audit/">Аудит</a></li>
+                        <li><a href="/sites/">Сайты под ключ</a></li>
+                        <li><a href="/prices/">Цены</a></li>
+                        <li><a href="/contacts/">Контакты</a></li>
+                        <li><a href="/privacy/">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div>© 2023-2025 AVITOP — маркетинг и разработка</div>
+                <div>+7 989 821-92-18 | @avitop_pro_owner</div>
+                <div>
+                    <a href="/privacy/">Политика конфиденциальности</a>
+                    <span> · </span>
+                    <a href="/sitemap/">Карта сайта</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#5D9BFF' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#5D9BFF', opacity: 0.2, width: 1 },
+                move: { enable: true, speed: 1, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
+            retina_detect: true
+        });
+
+        const toggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('.nav');
+        if (toggle && nav) {
+            toggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (nav.classList.contains('open')) {
+                        nav.classList.remove('open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

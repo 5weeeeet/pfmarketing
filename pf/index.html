@@ -6,7 +6,9 @@
     <title>ПФ и отзывы на Авито | Накрутка поведенческих факторов | AVITOP</title>
     <meta name="description" content="Накрутка поведенческих факторов (ПФ) на Авито. Живые отзывы, гарантия безопасности, выход в ТОП за 24 часа. 850+ успешных проектов. Работаем с 2018 года.">
     
-    <!-- Библиотека частиц -->
+        <link rel="canonical" href="https://pfmarketing.ru/pf/">
+    <meta name="robots" content="index,follow">
+<!-- Библиотека частиц -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <!-- Шрифты -->
@@ -455,6 +457,41 @@
             object-fit: cover;
             display: block;
         }
+        .review-photo img {
+            cursor: zoom-in;
+        }
+        .review-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 12, 15, 0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            padding: 30px;
+        }
+        .review-modal.open { display: flex; }
+        .review-modal img {
+            max-width: min(920px, 92vw);
+            max-height: 85vh;
+            border-radius: 16px;
+            border: 1px solid rgba(93, 155, 255, 0.25);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+            background: #0A0C0F;
+        }
+        .review-modal button {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(93, 155, 255, 0.35);
+            background: rgba(20, 24, 28, 0.8);
+            color: #E0E4E9;
+            font-size: 20px;
+            cursor: pointer;
+        }
         
         
         .equal-cards .card {
@@ -653,7 +690,11 @@
             align-items: center;
             color: #6B7280;
             font-size: 14px;
+            gap: 16px;
+            flex-wrap: wrap;
         }
+        .footer a { color: #A0A8B5; text-decoration: none; }
+        .footer a:hover { color: #5D9BFF; }
         @media (max-width: 768px) {
             .grid-2 { grid-template-columns: 1fr; }
             .guarantee-grid { grid-template-columns: 1fr; }
@@ -705,6 +746,7 @@
         .feature-list {
             text-align: left;
         }
+        h1, h2, h3 { text-align: center; }
     </style>
 </head>
 <body>
@@ -726,6 +768,7 @@
                         <a href="/pf/" class="active">ПФ и отзывы</a>
                         <a href="/audit/">Аудит</a>
                         <a href="/sites/">Сайты под ключ</a>
+                        <a href="/prices/">Цены</a>
                         <a href="/contacts/">Контакты</a>
                 </nav>
                 <div class="header-contacts">
@@ -791,113 +834,10 @@
                     </div>
                 </div>
                 
-                <!-- Тарифы (2 колонки) -->
-                <h2 class="card-title" style="margin: 40px 0 20px;">Тарифы на ПФ</h2>
-                <div class="grid-2 equal-cards">
-                    <!-- Премиум ПФ услуги -->
-                    <div class="card">
-                        <div class="badge">Хит продаж</div>
-                        <div class="card-title">Премиум ПФ <small>для услуг</small></div>
-                        <div class="price">от 5₽ <small>/ за 1 ПФ</small></div>
-                        <ul class="feature-list">
-                            <li>3 минуты на объявлении</li>
-                            <li>Просмотр фото и видео</li>
-                            <li>Просмотр контакта</li>
-                            <li>Просмотр геолокации</li>
-                            <li>Кнопка «читать далее»</li>
-                            <li>Читает описание</li>
-                            <li>Добавляет в избранное</li>
-                            <li>Переходит в отзывы</li>
-                            <li>Переход в профиль</li>
-                        </ul>
-                        <div style="color: #5D9BFF; font-size: 14px; margin: 15px 0;">🎁 Бонус: стратегия продвижения</div>
-                        <a href="#order" class="btn">Заказать от 20 шт</a>
-                    </div>
-                    
-                    <!-- Премиум ПФ товары -->
-                    <div class="card">
-                        <div class="card-title">Премиум ПФ <small>для товаров</small></div>
-                        <div class="price">от 5₽ <small>/ за 1 ПФ</small></div>
-                        <ul class="feature-list">
-                            <li>4-5 минут на объявлении</li>
-                            <li>Просмотр фото и видео</li>
-                            <li>Просмотр контакта</li>
-                            <li>Кнопка «читать далее»</li>
-                            <li>Читает описание</li>
-                            <li>Добавляет в избранное</li>
-                        </ul>
-                        <div style="color: #5D9BFF; font-size: 14px; margin: 15px 0;">🎁 Бонус: стратегия продвижения</div>
-                        <a href="#order" class="btn btn-outline" style="margin-top: 53px;">Заказать от 20 шт</a>
-                    </div>
-                </div>
-                
-                <!-- Дополнительные услуги (консультация, наставничество, запуск) -->
-                <h2 class="card-title" style="margin: 60px 0 20px;">Комплексные услуги</h2>
-                <div class="grid-2 equal-cards">
-                    <div class="card">
-                        <div class="card-title">Консультация</div>
-                        <div class="price">5 000₽</div>
-                        <p style="color: #A0A8B5; margin-bottom: 20px;">Часовая консультация: оформление аккаунта, продающие объявления, платное продвижение.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-title">Наставничество</div>
-                        <div class="price">150 000₽</div>
-                        <p style="color: #A0A8B5; margin-bottom: 20px;">Помощь в развитии, продвижение на Авито, создание контента, стратегии. Выход на 13 000₽/день.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-title">Запуск проекта</div>
-                        <div class="price">50 000₽</div>
-                        <p style="color: #A0A8B5; margin-bottom: 20px;">Анализ рынка, выбор ниши, работа с поставщиками, тесты, стратегии. Запуск за 2 недели.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-title">Самовыкуп товаров</div>
-                        <div class="price">1 000₽</div>
-                        <p style="color: #A0A8B5; margin-bottom: 20px;">Быстрый и безопасный самовыкуп для повышения видимости товаров.</p>
-                    </div>
-                </div>
-                <div style="text-align: center; margin: 10px 0 30px;">
-                    <a href="#order" class="btn btn-large">Оставить заявку</a>
-                </div>
-                
-                <!-- Услуги по объявлениям -->
-                <h2 class="card-title" style="margin: 40px 0 20px;">Создание и оформление объявлений</h2>
-                <div class="grid-2 equal-cards">
-                    <div class="card">
-                        <div class="badge">−37%</div>
-                        <div class="card-title">Продающие объявления</div>
-                        <div class="price">2 500₽ <small style="text-decoration: line-through; color: #6B7280;">3 990₽</small></div>
-                        <ul class="feature-list">
-                            <li>Анализ рынка и ЦА</li>
-                            <li>Ключевые преимущества</li>
-                            <li>SEO-оптимизация</li>
-                            <li>Инфографика на фото</li>
-                            <li>🎁 10 ПФ в подарок</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="card-title">Разработка объявления</div>
-                        <div class="price">15 000₽</div>
-                        <ul class="feature-list">
-                            <li>Глубокий анализ конкурентов</li>
-                            <li>Выявление преимуществ</li>
-                            <li>Уникальный SEO-текст</li>
-                            <li>Инфографика на 2 фото</li>
-                            <li>Топ при мин. затратах</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="card-title">Инфографика</div>
-                        <div class="price">1 000₽</div>
-                        <p style="color: #A0A8B5;">Продающий заголовок на фото. Вовлечение клиента по алгоритмам площадки.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-title">Ключевые слова</div>
-                        <div class="price">1 000₽</div>
-                        <p style="color: #A0A8B5;">Подбор ключевых слов для максимальной видимости объявлений.</p>
-                    </div>
-                </div>
-                <div style="text-align: center; margin: 10px 0 30px;">
-                    <a href="#order" class="btn btn-large">Оставить заявку</a>
+                <div class="card" style="text-align: center; margin: 40px 0;">
+                    <h3 class="card-title-light">Цены на ПФ и сопутствующие услуги</h3>
+                    <p style="color: #A0A8B5; margin-bottom: 20px;">Все тарифы по ПФ, комплексным услугам и оформлению объявлений перенесли на отдельную страницу.</p>
+                    <a href="/prices/" class="btn btn-large">Посмотреть цены</a>
                 </div>
                 
                 <!-- Отзывы клиентов с фото (сетка 4) -->
@@ -935,6 +875,10 @@
                             <div class="review-date">10.04.2025</div>
                         </div>
                     </div>
+                </div>
+                <div class="review-modal" id="reviewModal" aria-hidden="true">
+                    <button type="button" aria-label="Закрыть">×</button>
+                    <img src="" alt="Фото отзыва">
                 </div>
                 
                 <!-- Кейсы -->
@@ -1014,7 +958,7 @@
                     <div class="form-sub">Получите просмотры вашего объявления уже завтра</div>
                     
                     <div class="social-links">
-                        <a href="https://t.me/avitop_pro_owner"" class="social-link">📱 Telegram</a>
+                        <a href="https://t.me/avitop_pro_owner" class="social-link">📱 Telegram</a>
                         <a href="tel:+79898219218" class="social-link">📞 MAX: +7 989 821-92-18</a>
                         <a href="tel:+79898219218" class="social-link">📞 Позвонить</a>
                     </div>
@@ -1029,6 +973,11 @@
             <div class="container">
                 <div>© 2023-2025 AVITOP — ПФ, отзывы, продвижение на Авито</div>
                 <div>+7 989 821-92-18 | @avitop_pro_owner</div>
+                <div>
+                    <a href="/privacy/" style="color: #A0A8B5; text-decoration: none;">Политика конфиденциальности</a>
+                    <span> · </span>
+                    <a href="/sitemap/" style="color: #A0A8B5; text-decoration: none;">Карта сайта</a>
+                </div>
             </div>
         </footer>
     </div>
@@ -1104,6 +1053,37 @@
         })();
     </script>
     <script>
+        (function enableReviewZoom() {
+            const modal = document.getElementById('reviewModal');
+            if (!modal) return;
+            const modalImg = modal.querySelector('img');
+            const closeBtn = modal.querySelector('button');
+
+            document.querySelectorAll('.review-photo img').forEach(img => {
+                img.addEventListener('click', () => {
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt;
+                    modal.classList.add('open');
+                    modal.setAttribute('aria-hidden', 'false');
+                });
+            });
+
+            const close = () => {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+                modalImg.src = '';
+            };
+
+            closeBtn.addEventListener('click', close);
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) close();
+            });
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') close();
+            });
+        })();
+    </script>
+    <script>
         (function enableParticlesTouch(){
             const update = (event) => {
                 const touch = event.touches && event.touches[0];
@@ -1125,6 +1105,7 @@
     </script>
 </body>
 </html>
+
 
 
 
