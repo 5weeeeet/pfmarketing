@@ -1,7 +1,6 @@
 services:
-  - type: web
+  - type: static
     name: pfmarketing-static
-    env: static
     repo: https://github.com/5weeeeet/pfmarketing.git
     branch: git_project
     buildCommand: ""
