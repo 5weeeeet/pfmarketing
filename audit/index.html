@@ -702,18 +702,7 @@
                     <div class="form-title">Первая консультация — бесплатно</div>
                     <div class="form-sub">Созваниваемся, смотрим цифры, обсуждаем ситуацию. Без воды и навязывания.</div>
                     
-                    <form>
-                        <div class="form-row">
-                            <input type="text" class="form-input" placeholder="Ваше имя">
-                            <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__">
-                        </div>
-                        <div class="form-row" style="margin-top: 20px;">
-                            <input type="text" class="form-input" placeholder="Сайт или ссылка на Avito (если есть)">
-                        </div>
-                        <div class="form-row" style="justify-content: center; margin-top: 30px;">
-                            <button type="submit" class="btn btn-large">Записаться</button>
-                        </div>
-                    </form>
+                    
                     
                     <div style="margin-top: 30px; color: #6B7280;">
                         Или напишите в Telegram: <a href="https://t.me/avitop_pro_owner" style="color: #5D9BFF; text-decoration: none;">@avitop_pro_owner</a>
@@ -771,22 +760,7 @@
             retina_detect: true
         });
     </script>
-    <script>
-        (function attachFormHandlers(){
-            document.querySelectorAll('form').forEach(form=>{
-                form.addEventListener('submit', function(e){
-                    e.preventDefault();
-                    const fields = Array.from(form.querySelectorAll('input'));
-                    const data = {};
-                    fields.forEach(f=>{ if(f.placeholder) data[f.placeholder]=f.value.trim(); });
-                    let text = `Заявка с сайта ${location.hostname} — ${document.title}\n`;
-                    for(const k in data){ if(data[k]) text += `${k}: ${data[k]}\n`; }
-                    const url = 'https://wa.me/79898219218?text=' + encodeURIComponent(text);
-                    const opened = window.open(url,'_blank');\n                    if (!opened) { window.location.href = url; }
-                });
-            });
-        })();
-    </script>
+    
     <script>
         (function () {
             const toggle = document.querySelector('.nav-toggle');
@@ -838,6 +812,9 @@
     </script>
 </body>
 </html>
+
+
+
 
 
 

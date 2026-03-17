@@ -555,22 +555,7 @@
             retina_detect: true
         });
     </script>
-        <script>
-            (function attachFormHandlers(){
-                document.querySelectorAll('form').forEach(form=>{
-                    form.addEventListener('submit', function(e){
-                        e.preventDefault();
-                        const fields = Array.from(form.querySelectorAll('input'));
-                        const data = {};
-                        fields.forEach(f=>{ if(f.placeholder) data[f.placeholder]=f.value.trim(); });
-                        let text = `Заявка с сайта ${location.hostname} — ${document.title}\n`;
-                        for(const k in data){ if(data[k]) text += `${k}: ${data[k]}\n`; }
-                        const url = 'https://wa.me/79898219218?text=' + encodeURIComponent(text);
-                        const opened = window.open(url,'_blank');\n                    if (!opened) { window.location.href = url; }
-                    });
-                });
-            })();
-        </script>
+        
     <script>
         (function () {
             const toggle = document.querySelector('.nav-toggle');
@@ -622,6 +607,9 @@
     </script>
 </body>
 </html>
+
+
+
 
 
 
