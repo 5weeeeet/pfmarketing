@@ -800,10 +800,29 @@
             }
             .nav a { padding: 10px 8px; }
             .nav-toggle { display: inline-flex; }
-        }        /* Text hover glow */
-        .text-spotlight:hover {
-            color: #E6F0FF;
-            text-shadow: 0 0 10px rgba(93, 155, 255, 0.35), 0 0 18px rgba(189, 122, 255, 0.25);
+        }        /* Text spotlight */
+        .spotlight-host {
+            position: relative;
+        }
+        .spotlight-host::after {
+            content: attr(data-spotlight);
+            position: absolute;
+            inset: 0;
+            color: transparent;
+            background: radial-gradient(60px circle at var(--mx) var(--my), #E6F0FF 0%, #BFD3FF 35%, rgba(224, 228, 233, 0) 70%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.12s ease;
+            white-space: pre-wrap;
+            font: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            text-transform: inherit;
+        }
+        .spotlight-host.spotlight-on::after {
+            opacity: 1;
         }</style>
 </head>
 <body class="lux-home">
@@ -1069,7 +1088,35 @@
             });
         })();
     </script>
-</body>
+    <script>
+        /* Text spotlight */
+        (function () {
+            const selector = '.wrapper p, .wrapper li, .wrapper .section-title, .wrapper .section-sub, .wrapper .card-title, .wrapper .card-title-light, .wrapper .service-title, .wrapper .service-desc, .wrapper .contact-link';
+            const elements = Array.from(document.querySelectorAll(selector));
+            elements.forEach(el => {
+                const text = el.innerText;
+                if (!text) return;
+                el.classList.add('spotlight-host');
+                el.setAttribute('data-spotlight', text);
+            });
+
+            const onMove = (event) => {
+                const target = event.target.closest(selector);
+                if (!target) return;
+                const rect = target.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                target.classList.add('spotlight-on');
+                target.style.setProperty('--mx', x + 'px');
+                target.style.setProperty('--my', y + 'px');
+            };
+
+            elements.forEach(el => {
+                el.addEventListener('mousemove', onMove);
+                el.addEventListener('mouseleave', () => el.classList.remove('spotlight-on'));
+            });
+        })();
+    </script></body>
 </html>
 
 
