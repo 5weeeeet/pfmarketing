@@ -314,7 +314,167 @@
 			.contact-grid { grid-template-columns: 1fr; }
 			.contact-card, .contact-note { text-align: center; }
 			.contact-legal { justify-items: center; }
-		}</style>
+		}
+        /* Header Unified */
+        .header {
+            padding: 16px 0;
+            pointer-events: auto;
+            border-bottom: 1px solid rgba(93, 155, 255, 0.18);
+            backdrop-filter: blur(14px);
+            background: rgba(10, 12, 15, 0.78);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(93,155,255,0.08), rgba(189,122,255,0.06), rgba(93,155,255,0.08));
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+        .nav a {
+            color: #E0E4E9;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            position: relative;
+            padding: 6px 0;
+            transition: color 0.3s;
+        }
+        .nav a:hover { color: #5D9BFF; }
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -6px;
+            height: 2px;
+            background: linear-gradient(90deg, #5D9BFF, #BD7AFF);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .nav a:hover::after,
+        .nav a.active::after {
+            transform: scaleX(1);
+        }
+        .nav-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            border: 1px solid rgba(93, 155, 255, 0.35);
+            background: rgba(20, 24, 28, 0.7);
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .nav-toggle:hover {
+            border-color: #5D9BFF;
+            transform: translateY(-1px);
+        }
+        .nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #E0E4E9;
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .phone-link {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .phone-link:hover { color: #5D9BFF; }
+        .tg-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #5D9BFF;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        .tg-link:hover {
+            background: #BD7AFF;
+            transform: translateY(-2px);
+        }
+        .tg-link svg { width: 20px; height: 20px; fill: #0A0C0F; }
+        .nav-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 8, 12, 0.6);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 9;
+        }
+        body.nav-open .nav-backdrop {
+            opacity: 1;
+            visibility: visible;
+        }
+        @media (max-width: 900px) {
+            .phone-link { display: none; }
+            .nav {
+                position: fixed;
+                top: 72px;
+                right: 16px;
+                left: 16px;
+                flex-direction: column;
+                gap: 12px;
+                background: rgba(10, 12, 15, 0.98);
+                border: 1px solid rgba(93, 155, 255, 0.25);
+                padding: 16px;
+                border-radius: 18px;
+                box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+                opacity: 0;
+                transform: translateY(-10px);
+                pointer-events: none;
+                z-index: 10;
+            }
+            .nav.open {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .nav a { padding: 10px 8px; }
+            .nav-toggle { display: inline-flex; }
+        }</style>
 </head>
 <body>
 
@@ -322,33 +482,33 @@
     <div id="particles-js"></div>
 
     <div class="wrapper">
-		<header class="header">
-			<div class="container">
-				<a href="/" class="logo">PFmarketing.ru</a>
-				<button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-				<nav class="nav">
-					<a href="/avitolog/">Авитолог</a>
-					<a href="/pf/">ПФ и отзывы</a>
-					<a href="/audit/">Аудит</a>
-					<a href="/sites/">Сайты под ключ</a>
-					<a href="/prices/">Цены</a>
-					<a href="/contacts/" class="active">Контакты</a>
-				</nav>
-				<div class="header-contacts">
-					<a href="tel:+79898219218" class="phone-link">+7 989 821-92-18</a>
-					<a href="https://t.me/avitop_pro_owner" target="_blank" class="tg-link" aria-label="Telegram">
-						<svg viewBox="0 0 24 24">
-							<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248c-.183 1.92-.978 6.58-1.382 8.728-.171.912-.51 1.217-.837 1.247-.712.066-1.252-.47-1.942-.922-1.078-.706-1.688-1.145-2.735-1.834-1.21-.796-.426-1.234.264-1.95.18-.187 3.286-3.012 3.346-3.27.007-.032.014-.15-.056-.212-.07-.063-.173-.042-.248-.024-.106.025-1.79 1.137-5.053 3.34-.478.328-.91.488-1.298.48-.427-.01-1.25-.242-1.862-.44-.75-.244-1.346-.373-1.294-.787.027-.216.325-.438.893-.664 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.1-.002.323.023.468.14.117.097.15.226.166.318.015.092.034.302.019.466z"/>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="nav-backdrop" aria-hidden="true"></div>
-		</header>		<main>
+		        <header class="header">
+            <div class="container">
+                <a href="/" class="logo">PFmarketing.ru</a>
+                <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <a href="/avitolog/">Авитолог</a>
+                    <a href="/pf/">ПФ и отзывы</a>
+                    <a href="/audit/">Аудит</a>
+                    <a href="/sites/">Сайты под ключ</a>
+                    <a href="/prices/">Цены</a>
+                    <a href="/contacts/" class="active">Контакты</a>
+                </nav>
+                <div class="header-contacts">
+                    <a href="tel:+79898219218" class="phone-link">+7 989 821-92-18</a>
+                    <a href="https://t.me/avitop_pro_owner" target="_blank" class="tg-link" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248c-.183 1.92-.978 6.58-1.382 8.728-.171.912-.51 1.217-.837 1.247-.712.066-1.252-.47-1.942-.922-1.078-.706-1.688-1.145-2.735-1.834-1.21-.796-.426-1.234.264-1.95.18-.187 3.286-3.012 3.346-3.27.007-.032.014-.15-.056-.212-.07-.063-.173-.042-.248-.024-.106.025-1.79 1.137-5.053 3.34-.478.328-.91.488-1.298.48-.427-.01-1.25-.242-1.862-.44-.75-.244-1.346-.373-1.294-.787.027-.216.325-.438.893-.664 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.1-.002.323.023.468.14.117.097.15.226.166.318.015.092.034.302.019.466z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-backdrop" aria-hidden="true"></div>
+        </header>		<main>
 			<div class="container">
 				<section class="section hero-small">
 					<div class="hero-kicker">Связаться с PFMarketing</div>

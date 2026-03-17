@@ -781,6 +781,166 @@
                 pointer-events: auto;
             }
             .nav a { padding: 10px 8px; }
+        }
+        /* Header Unified */
+        .header {
+            padding: 16px 0;
+            pointer-events: auto;
+            border-bottom: 1px solid rgba(93, 155, 255, 0.18);
+            backdrop-filter: blur(14px);
+            background: rgba(10, 12, 15, 0.78);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(93,155,255,0.08), rgba(189,122,255,0.06), rgba(93,155,255,0.08));
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+        .nav a {
+            color: #E0E4E9;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            position: relative;
+            padding: 6px 0;
+            transition: color 0.3s;
+        }
+        .nav a:hover { color: #5D9BFF; }
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -6px;
+            height: 2px;
+            background: linear-gradient(90deg, #5D9BFF, #BD7AFF);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .nav a:hover::after,
+        .nav a.active::after {
+            transform: scaleX(1);
+        }
+        .nav-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            border: 1px solid rgba(93, 155, 255, 0.35);
+            background: rgba(20, 24, 28, 0.7);
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .nav-toggle:hover {
+            border-color: #5D9BFF;
+            transform: translateY(-1px);
+        }
+        .nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #E0E4E9;
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .phone-link {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .phone-link:hover { color: #5D9BFF; }
+        .tg-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #5D9BFF;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        .tg-link:hover {
+            background: #BD7AFF;
+            transform: translateY(-2px);
+        }
+        .tg-link svg { width: 20px; height: 20px; fill: #0A0C0F; }
+        .nav-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 8, 12, 0.6);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 9;
+        }
+        body.nav-open .nav-backdrop {
+            opacity: 1;
+            visibility: visible;
+        }
+        @media (max-width: 900px) {
+            .phone-link { display: none; }
+            .nav {
+                position: fixed;
+                top: 72px;
+                right: 16px;
+                left: 16px;
+                flex-direction: column;
+                gap: 12px;
+                background: rgba(10, 12, 15, 0.98);
+                border: 1px solid rgba(93, 155, 255, 0.25);
+                padding: 16px;
+                border-radius: 18px;
+                box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+                opacity: 0;
+                transform: translateY(-10px);
+                pointer-events: none;
+                z-index: 10;
+            }
+            .nav.open {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .nav a { padding: 10px 8px; }
+            .nav-toggle { display: inline-flex; }
         }</style>
 </head>
 <body>
@@ -790,9 +950,9 @@
     
     <div class="wrapper">
         <!-- Шапка -->
-        <header class="header">
+                <header class="header">
             <div class="container">
-                <a href="/sites/" class="logo">AVITOP<span>.</span></a>
+                <a href="/" class="logo">PFmarketing.ru</a>
                 <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -800,13 +960,12 @@
                 </button>
                 <nav class="nav">
                     <a href="/avitolog/">Авитолог</a>
-                    <a href="/">Главная</a>
                     <a href="/pf/">ПФ и отзывы</a>
                     <a href="/audit/">Аудит</a>
+                    <a href="/sites/" class="active">Сайты под ключ</a>
                     <a href="/prices/">Цены</a>
                     <a href="/contacts/">Контакты</a>
                 </nav>
-
                 <div class="header-contacts">
                     <a href="tel:+79898219218" class="phone-link">+7 989 821-92-18</a>
                     <a href="https://t.me/avitop_pro_owner" target="_blank" class="tg-link" aria-label="Telegram">
