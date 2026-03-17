@@ -25,7 +25,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<style>
-		body { font-family: 'Inter', sans-serif; background: #0A0C0F; color: #E0E4E9; margin:0; }
+		body { font-family: 'Inter', sans-serif; background: #0A0C0F; color: #E0E4E9; margin:0; \n            text-align: center;\n        }
 		.container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
 		.header { padding: 16px 0; background: rgba(10,12,15,0.8); border-bottom: 1px solid rgba(93,155,255,0.1); position: sticky; top:0 }
 		.header .container { display:flex; justify-content:space-between; align-items:center }
@@ -120,7 +120,20 @@
         .feature-list {
             text-align: left;
         }
-    </style>
+            .max-float {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            padding: 14px 16px;
+            border-radius: 999px;
+            background: #0f172a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 9999;
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
+        }
+        .max-float:hover { transform: translateY(-1px); }\n        .feature-list { text-align: center; list-style-position: inside; padding-left: 0; }\n        .feature-list li { margin-left: 0; }\n</style>
 </head>
 <body>
 	<div class="wrapper">
@@ -209,8 +222,11 @@
             });
         })();
     </script>
+<a class="max-float" href="https://max.ru/u/f9LHodD0cOLY_ej-kgvGIZJTBUQG8SP8ERGFzJMDZOAWR_wyankx_Efoym8" target="_blank" rel="noopener">Написать в MAX</a>
 </body>
 </html>
+
+
 
 
 
