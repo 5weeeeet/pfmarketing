@@ -23,8 +23,7 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            background: #0A0C0F;
-            color: #E0E4E9;
+            background: #0A0C0F;color: #E0E4E9;
             line-height: 1.5;
         }
         
@@ -37,6 +36,7 @@
             height: 100%;
             z-index: 0;
             background: #0A0C0F;
+            pointer-events: none;
         }
         
         /* Контент */
@@ -44,8 +44,7 @@
             position: relative;
             z-index: 1;
             min-height: 100vh;
-            pointer-events: none;
-        }
+                    }
         
         .container {
             max-width: 1200px;
@@ -96,6 +95,45 @@
             transition: color 0.3s;
         }
         
+                .nav-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            border: 1px solid rgba(93, 155, 255, 0.35);
+            background: rgba(20, 24, 28, 0.7);
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .nav-toggle:hover {
+            border-color: #5D9BFF;
+            transform: translateY(-1px);
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #E0E4E9;
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
         .nav a:hover {
             color: #5D9BFF;
         }
@@ -501,9 +539,30 @@
         
         /* Адаптив */
         @media (max-width: 768px) {
-            .nav { display: none; }
             .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
             .hero-small h1 { font-size: 36px; }
+        }
+            @media (max-width: 900px) {
+            .header .container { position: relative; }
+            .nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                flex-direction: column;
+                gap: 12px;
+                background: rgba(10, 12, 15, 0.95);
+                border: 1px solid rgba(93, 155, 255, 0.2);
+                padding: 14px;
+                border-radius: 16px;
+                width: min(260px, 90vw);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            }
+            .nav.open { display: flex; }
+            .nav a { padding: 6px 4px; }
+            .nav-toggle { display: inline-flex; }
+            .header-contacts { gap: 10px; }
+            .phone-link { font-size: 14px; }
         }
     </style>
 </head>
@@ -516,7 +575,11 @@
         <header class="header">
             <div class="container">
                 <a href="sites.html" class="logo">AVITOP<span>.</span></a>
-
+                <button class="nav-toggle" type="button" aria-label="������� ����" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <nav class="nav">
                     <a href="avitolog.html">Авитолог</a>
                     <a href="index.html">Главная</a>
@@ -861,5 +924,38 @@
             });
         })();
     </script>
+    <script>
+        (function () {
+            const toggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav');
+            const header = document.querySelector('.header');
+            if (!toggle || !nav || !header) return;
+
+            const closeNav = () => {
+                nav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            };
+
+            toggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeNav);
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!nav.classList.contains('open')) return;
+                if (!header.contains(event.target)) {
+                    closeNav();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
+
+
+
+
