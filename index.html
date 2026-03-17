@@ -483,5 +483,21 @@
             retina_detect: true
         });
     </script>
+        <script>
+            (function attachFormHandlers(){
+                document.querySelectorAll('form').forEach(form=>{
+                    form.addEventListener('submit', function(e){
+                        e.preventDefault();
+                        const fields = Array.from(form.querySelectorAll('input'));
+                        const data = {};
+                        fields.forEach(f=>{ if(f.placeholder) data[f.placeholder]=f.value.trim(); });
+                        let text = `Заявка с сайта ${location.hostname} — ${document.title}\n`;
+                        for(const k in data){ if(data[k]) text += `${k}: ${data[k]}\n`; }
+                        const url = 'https://t.me/share/url?url=&text=' + encodeURIComponent(text);
+                        window.open(url,'_blank');
+                    });
+                });
+            })();
+        </script>
 </body>
 </html>
