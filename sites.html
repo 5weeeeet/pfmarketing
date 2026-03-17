@@ -14,7 +14,7 @@
     <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -24,7 +24,7 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Sora', sans-serif;
             background: #0A0C0F;color: #E0E4E9;
             line-height: 1.5;
         
@@ -39,7 +39,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            background: #0A0C0F;
+            background: transparent;
             pointer-events: none;
         }
         
@@ -648,10 +648,144 @@
         .card-title,
         .card-title-light { margin-bottom: var(--space-2); }
         .feature-list { margin: var(--space-3) 0; }
-        .grid-2, .grid-3, .grid-4 { margin: var(--space-4) 0; }</style>
+        .grid-2, .grid-3, .grid-4 { margin: var(--space-4) 0; }        /* FX: modern cosmic glow */
+        .fx-bg {
+            position: fixed;
+            inset: -10%;
+            background: linear-gradient(120deg, rgba(93, 155, 255, 0.14), rgba(189, 122, 255, 0.12), rgba(10, 12, 15, 0.2));
+            background-size: 200% 200%;
+            animation: gradientShift 18s ease infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .fx-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(0deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 2px),
+                linear-gradient(90deg, rgba(0,0,0,0.02) 0, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 2px);
+            background-size: 3px 3px;
+            opacity: 0.35;
+            mix-blend-mode: soft-light;
+        }
+        #particles-js { z-index: 1; }
+        .wrapper { z-index: 2; }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Premium UI */
+        h1, h2, h3 { letter-spacing: -0.02em; }
+        .card, .service-card, .stat-card, .case-item, .review-card, .faq-item {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(93, 155, 255, 0.12);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            will-change: transform;
+        }
+        .card:hover, .service-card:hover, .stat-card:hover, .case-item:hover, .review-card:hover, .faq-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(93, 155, 255, 0.28);
+        }
+        .btn, .btn-outline, .service-link {
+            transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease, color 0.35s ease;
+        }
+        .btn:hover, .btn-outline:hover, .service-link:hover {
+            transform: translateY(-2px);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; }
+        }
+        /* Luxury Header */
+        .header {
+            position: sticky;
+            background: rgba(10, 12, 15, 0.78);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+            border-bottom: 1px solid rgba(93, 155, 255, 0.18);
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(93,155,255,0.08), rgba(189,122,255,0.06), rgba(93,155,255,0.08));
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .header .container { gap: 20px; }
+        .nav a {
+            position: relative;
+            padding: 6px 0;
+            font-weight: 600;
+        }
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -6px;
+            height: 2px;
+            background: linear-gradient(90deg, #5D9BFF, #BD7AFF);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .nav a:hover::after,
+        .nav a.active::after {
+            transform: scaleX(1);
+        }
+        .nav-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 8, 12, 0.6);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 9;
+        }
+        body.nav-open .nav-backdrop {
+            opacity: 1;
+            visibility: visible;
+        }
+        @media (max-width: 900px) {
+            .header { backdrop-filter: blur(14px); }
+            .phone-link { display: none; }
+            .nav {
+                position: fixed;
+                top: 72px;
+                right: 16px;
+                left: 16px;
+                flex-direction: column;
+                gap: 12px;
+                background: rgba(10, 12, 15, 0.98);
+                border: 1px solid rgba(93, 155, 255, 0.25);
+                padding: 16px;
+                border-radius: 18px;
+                box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+                opacity: 0;
+                transform: translateY(-10px);
+                pointer-events: none;
+                z-index: 10;
+            }
+            .nav.open {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .nav a { padding: 10px 8px; }
+        }</style>
 </head>
 <body>
 
+    <div class="fx-bg"></div>
     <div id="particles-js"></div>
     
     <div class="wrapper">
@@ -682,6 +816,7 @@
                     </a>
                 </div>
             </div>
+            <div class="nav-backdrop" aria-hidden="true"></div>
         </header>
         
         <!-- Хлебные крошки -->
@@ -890,20 +1025,20 @@
         particlesJS('particles-js', {
             particles: {
                 number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#5D9BFF' },
+                color: { value: ['#5D9BFF', '#BD7AFF'] },
                 shape: { type: 'circle' },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
+                opacity: { value: 0.6, random: true },
+                size: { value: 2.8, random: true },
                 line_linked: {
                     enable: true,
-                    distance: 150,
-                    color: '#5D9BFF',
-                    opacity: 0.2,
+                    distance: 170,
+                    color: '#8AB4FF',
+                    opacity: 0.25,
                     width: 1
                 },
                 move: {
                     enable: true,
-                    speed: 1,
+                    speed: 1.2,
                     direction: 'none',
                     random: false,
                     straight: false,
@@ -932,21 +1067,27 @@
             const toggle = document.querySelector('.nav-toggle');
             const nav = document.querySelector('.nav');
             const header = document.querySelector('.header');
+            const backdrop = document.querySelector('.nav-backdrop');
             if (!toggle || !nav || !header) return;
 
             const closeNav = () => {
                 nav.classList.remove('open');
                 toggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('nav-open');
             };
 
             toggle.addEventListener('click', () => {
                 const isOpen = nav.classList.toggle('open');
                 toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                document.body.classList.toggle('nav-open', isOpen);
             });
 
             nav.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', closeNav);
             });
+            if (backdrop) {
+                backdrop.addEventListener('click', closeNav);
+            }
 
             document.addEventListener('click', (event) => {
                 if (!nav.classList.contains('open')) return;
@@ -989,7 +1130,31 @@
     ym(107738668, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/107738668" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter --></body>
+<!-- /Yandex.Metrika counter -->
+    <script>
+        /* FX reveal */
+        (function () {
+            const targets = document.querySelectorAll(
+                '.section-title, .section-sub, .card, .service-card, .stat-card, .case-item, .review-card, .faq-item, .feature-list'
+            );
+            if (!('IntersectionObserver' in window)) {
+                targets.forEach(el => el.classList.add('reveal', 'in'));
+                return;
+            }
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal', 'in');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            targets.forEach(el => {
+                el.classList.add('reveal');
+                io.observe(el);
+            });
+        })();
+    </script></body>
 </html>
 
 
