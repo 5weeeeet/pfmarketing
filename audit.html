@@ -816,8 +816,29 @@
             });
         })();
     </script>
+    <script>
+        (function enableParticlesTouch(){
+            const update = (event) => {
+                const touch = event.touches && event.touches[0];
+                if (!touch) return;
+                const p = window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS;
+                if (!p) return;
+                p.interactivity.mouse.pos_x = touch.clientX;
+                p.interactivity.mouse.pos_y = touch.clientY;
+                p.interactivity.status = 'mousemove';
+            };
+            document.addEventListener('touchstart', update, { passive: true });
+            document.addEventListener('touchmove', update, { passive: true });
+            document.addEventListener('touchend', () => {
+                const p = window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS;
+                if (!p) return;
+                p.interactivity.status = 'mouseleave';
+            }, { passive: true });
+        })();
+    </script>
 </body>
 </html>
+
 
 
 

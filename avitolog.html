@@ -844,40 +844,36 @@
                         <h3 class="card-title-light">Накрутка ПФ</h3>
                         <div class="price">от 5 ₽ <small>/шт</small></div>
                         <p style="color: #A0A8B5;">Поведенческие факторы высокого качества. Заказ от 20 шт/день.</p>
-                        <a href="#consult" class="btn btn-outline" style="width: 100%;">Заказать</a>
                     </div>
                     <div class="card">
                         <h3 class="card-title-light">Накрутка отзывов</h3>
                         <div class="price">5 990 ₽</div>
                         <p style="color: #A0A8B5;">Реальные отзывы, которые не слетают. Гарантия.</p>
-                        <a href="#consult" class="btn btn-outline" style="width: 100%;">Заказать</a>
                     </div>
                     <div class="card">
                         <h3 class="card-title-light">Аудит профиля</h3>
                         <div class="price">2 990 ₽</div>
                         <p style="color: #A0A8B5;">Полный разбор аккаунта, объявлений и конкурентов.</p>
-                        <a href="#consult" class="btn btn-outline" style="width: 100%;">Заказать</a>
                     </div>
                     <div class="card">
                         <h3 class="card-title-light">Обучение</h3>
                         <div class="price">29 990 ₽</div>
                         <p style="color: #A0A8B5;">Алгоритмы, стратегии, фишки. Стань авитологом сам.</p>
-                        <a href="#consult" class="btn btn-outline" style="width: 100%;">Заказать</a>
                     </div>
                     <div class="card">
                         <h3 class="card-title-light">Стратегия</h3>
                         <div class="price">9 990 ₽</div>
                         <p style="color: #A0A8B5;">Индивидуальный план продвижения под ваш бизнес.</p>
-                        <a href="#consult" class="btn btn-outline" style="width: 100%;">Заказать</a>
                     </div>
                     <div class="card">
                         <h3 class="card-title-light">Ведение под ключ</h3>
                         <div class="price">от 19 900 ₽</div>
                         <p style="color: #A0A8B5;">Полное управление рекламой и ПФ. Отчеты 24/7.</p>
-                        <a href="#consult" class="btn btn-outline" style="width: 100%;">Заказать</a>
                     </div>
                 </div>
-                
+                <div style="text-align: center; margin: 10px 0 30px;">
+                    <a href="#consult" class="btn btn-large">�������� ������</a>
+                </div>
                 <!-- Миссия -->
                 <div class="mission-block">
                     <p><strong>Наша миссия</strong> — помочь предпринимателям заработать больше денег.</p>
@@ -925,8 +921,8 @@
                     <div class="form-sub">Обойдите конкурентов уже завтра</div>
                     
                     <div class="social-grid">
-                        <a href="#" class="social-button">📱 Telegram</a>
-                        <a href="#" class="social-button">📞 WhatsApp</a>
+                        <a href="https://t.me/avitop_pro_owner"" class="social-button">📱 Telegram</a>
+                        <a href="https://wa.me/79898219218"" class="social-button">📞 WhatsApp</a>
                         <a href="tel:+79898219218" class="social-button">📞 Позвонить</a>
                     </div>
                     
@@ -1045,8 +1041,31 @@
             });
         })();
     </script>
+    <script>
+        (function enableParticlesTouch(){
+            const update = (event) => {
+                const touch = event.touches && event.touches[0];
+                if (!touch) return;
+                const p = window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS;
+                if (!p) return;
+                p.interactivity.mouse.pos_x = touch.clientX;
+                p.interactivity.mouse.pos_y = touch.clientY;
+                p.interactivity.status = 'mousemove';
+            };
+            document.addEventListener('touchstart', update, { passive: true });
+            document.addEventListener('touchmove', update, { passive: true });
+            document.addEventListener('touchend', () => {
+                const p = window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS;
+                if (!p) return;
+                p.interactivity.status = 'mouseleave';
+            }, { passive: true });
+        })();
+    </script>
 </body>
 </html>
+
+
+
 
 
 

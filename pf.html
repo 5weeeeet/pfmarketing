@@ -792,26 +792,25 @@
                         <div class="card-title">Консультация</div>
                         <div class="price">5 000₽</div>
                         <p style="color: #A0A8B5; margin-bottom: 20px;">Часовая консультация: оформление аккаунта, продающие объявления, платное продвижение.</p>
-                        <a href="#order" class="btn btn-outline">Подробнее</a>
                     </div>
                     <div class="card">
                         <div class="card-title">Наставничество</div>
                         <div class="price">150 000₽</div>
                         <p style="color: #A0A8B5; margin-bottom: 20px;">Помощь в развитии, продвижение на Авито, создание контента, стратегии. Выход на 13 000₽/день.</p>
-                        <a href="#order" class="btn btn-outline">Подробнее</a>
                     </div>
                     <div class="card">
                         <div class="card-title">Запуск проекта</div>
                         <div class="price">50 000₽</div>
                         <p style="color: #A0A8B5; margin-bottom: 20px;">Анализ рынка, выбор ниши, работа с поставщиками, тесты, стратегии. Запуск за 2 недели.</p>
-                        <a href="#order" class="btn btn-outline">Подробнее</a>
                     </div>
                     <div class="card">
                         <div class="card-title">Самовыкуп товаров</div>
                         <div class="price">1 000₽</div>
                         <p style="color: #A0A8B5; margin-bottom: 20px;">Быстрый и безопасный самовыкуп для повышения видимости товаров.</p>
-                        <a href="#order" class="btn btn-outline">Подробнее</a>
                     </div>
+                </div>
+                <div style="text-align: center; margin: 10px 0 30px;">
+                    <a href="#order" class="btn btn-large">�������� ������</a>
                 </div>
                 
                 <!-- Услуги по объявлениям -->
@@ -828,7 +827,6 @@
                             <li>Инфографика на фото</li>
                             <li>🎁 10 ПФ в подарок</li>
                         </ul>
-                        <a href="#order" class="btn">Заказать</a>
                     </div>
                     <div class="card">
                         <div class="card-title">Разработка объявления</div>
@@ -840,20 +838,20 @@
                             <li>Инфографика на 2 фото</li>
                             <li>Топ при мин. затратах</li>
                         </ul>
-                        <a href="#order" class="btn">Заказать</a>
                     </div>
                     <div class="card">
                         <div class="card-title">Инфографика</div>
                         <div class="price">1 000₽</div>
                         <p style="color: #A0A8B5;">Продающий заголовок на фото. Вовлечение клиента по алгоритмам площадки.</p>
-                        <a href="#order" class="btn btn-outline" style="margin-top: 45px;">Заказать</a>
                     </div>
                     <div class="card">
                         <div class="card-title">Ключевые слова</div>
                         <div class="price">1 000₽</div>
                         <p style="color: #A0A8B5;">Подбор ключевых слов для максимальной видимости объявлений.</p>
-                        <a href="#order" class="btn btn-outline" style="margin-top: 45px;">Заказать</a>
                     </div>
+                </div>
+                <div style="text-align: center; margin: 10px 0 30px;">
+                    <a href="#order" class="btn btn-large">�������� ����������</a>
                 </div>
                 
                 <!-- Отзывы клиентов с фото (сетка 4) -->
@@ -970,8 +968,8 @@
                     <div class="form-sub">Получите просмотры вашего объявления уже завтра</div>
                     
                     <div class="social-links">
-                        <a href="#" class="social-link">📱 Telegram</a>
-                        <a href="#" class="social-link">📞 WhatsApp</a>
+                        <a href="https://t.me/avitop_pro_owner"" class="social-link">📱 Telegram</a>
+                        <a href="https://wa.me/79898219218"" class="social-link">📞 WhatsApp</a>
                         <a href="tel:+79898219218" class="social-link">📞 Позвонить</a>
                     </div>
                     
@@ -1082,8 +1080,33 @@
             });
         })();
     </script>
+    <script>
+        (function enableParticlesTouch(){
+            const update = (event) => {
+                const touch = event.touches && event.touches[0];
+                if (!touch) return;
+                const p = window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS;
+                if (!p) return;
+                p.interactivity.mouse.pos_x = touch.clientX;
+                p.interactivity.mouse.pos_y = touch.clientY;
+                p.interactivity.status = 'mousemove';
+            };
+            document.addEventListener('touchstart', update, { passive: true });
+            document.addEventListener('touchmove', update, { passive: true });
+            document.addEventListener('touchend', () => {
+                const p = window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS;
+                if (!p) return;
+                p.interactivity.status = 'mouseleave';
+            }, { passive: true });
+        })();
+    </script>
 </body>
 </html>
+
+
+
+
+
 
 
 
