@@ -26,7 +26,7 @@
         .logo { font-size: 24px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: -0.5px; }
         .nav { display: flex; gap: 32px; }
         .nav a { color: #E0E4E9; text-decoration: none; font-size: 15px; font-weight: 500; }
-        .nav a:hover { color: #5D9BFF; }
+        .nav a:hover { color: #5D9BFF; text-shadow: 0 0 12px rgba(93, 155, 255, 0.6), 0 0 24px rgba(189, 122, 255, 0.35); }
         .nav-toggle { display: none; width: 42px; height: 42px; border-radius: 12px; border: 1px solid rgba(93, 155, 255, 0.35); background: rgba(20, 24, 28, 0.7); align-items: center; justify-content: center; gap: 5px; cursor: pointer; }
         .nav-toggle span { display: block; width: 20px; height: 2px; background: #E0E4E9; border-radius: 2px; }
         .header-contacts { display: flex; align-items: center; gap: 16px; }
@@ -262,7 +262,7 @@
             padding: 6px 0;
             transition: color 0.3s;
         }
-        .nav a:hover { color: #5D9BFF; }
+        .nav a:hover { color: #5D9BFF; text-shadow: 0 0 12px rgba(93, 155, 255, 0.6), 0 0 24px rgba(189, 122, 255, 0.35); }
         .nav a::after {
             content: "";
             position: absolute;
@@ -374,6 +374,22 @@
             }
             .nav a { padding: 10px 8px; }
             .nav-toggle { display: inline-flex; }
+        }
+.wrapper p:hover,
+        .wrapper li:hover,
+        .wrapper .section-title:hover,
+        .wrapper .section-sub:hover,
+        .wrapper .card-title:hover,
+        .wrapper .card-title-light:hover,
+        .wrapper .service-title:hover,
+        .wrapper .service-desc:hover,
+        .wrapper .contact-link:hover {
+            color: #E6F0FF;
+            text-shadow: 0 0 10px rgba(93, 155, 255, 0.35), 0 0 18px rgba(189, 122, 255, 0.25);
+        }        /* Text hover glow */
+        .text-spotlight:hover {
+            color: #E6F0FF;
+            text-shadow: 0 0 10px rgba(93, 155, 255, 0.35), 0 0 18px rgba(189, 122, 255, 0.25);
         }</style>
 </head>
 <body>
