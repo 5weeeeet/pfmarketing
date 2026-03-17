@@ -823,6 +823,13 @@
         }
         .spotlight-host.spotlight-on::after {
             opacity: 1;
+        }
+        /* Liquid scroll (mobile) */
+        @media (max-width: 900px) {
+            .liquid-target {
+                will-change: transform, filter;
+                transition: transform 0.12s ease, filter 0.12s ease;
+            }
         }</style>
 </head>
 <body class="lux-home">
@@ -864,7 +871,7 @@
         <main>
             <div class="container">
                 <!-- Герой -->
-                <section class="section hero">
+                <section class="section liquid-target hero">
                     <div class="hero-kicker">Работаем с 2018 года</div>
                     <h1>Разработка сайтов и продвижение на Авито</h1>
                     <p>Комплексный маркетинг для бизнеса: от накрутки ПФ до интернет-магазинов под ключ</p>
@@ -873,19 +880,19 @@
                 
                 <!-- Статистика -->
                 <div class="stats-grid">
-                    <div class="stat-card">
+                    <div class="stat-card liquid-target">
                         <div class="stat-number">5</div>
                         <div class="stat-desc">лет средний опыт специалистов</div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card liquid-target">
                         <div class="stat-number">24/7</div>
                         <div class="stat-desc">поддержка и отчетность</div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card liquid-target">
                         <div class="stat-number">850+</div>
                         <div class="stat-desc">успешных проектов на Авито</div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card liquid-target">
                         <div class="stat-number">0</div>
                         <div class="stat-desc">недовольных клиентов</div>
                     </div>
@@ -897,19 +904,19 @@
                 
                 <!-- Услуги -->
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card liquid-target">
                         <h3 class="service-title">Маркетинг на Авито</h3>
                         <p class="service-desc">Поднимем объявления в топ за счет ПФ. Накрутим живые отзывы, которые не слетают. Полный комплекс услуг авитолога.</p>
                         <a href="/pf/" class="service-link">Подробнее</a>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card liquid-target">
                         <h3 class="service-title">Аудит и аналитика</h3>
                         <p class="service-desc">Глубокий аудит бизнеса, рекламы и конкурентов. Рекомендации: нужен ли вам сайт, блог или достаточно усилить Авито.</p>
                         <a href="/audit/" class="service-link">Подробнее</a>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card liquid-target">
                         <h3 class="service-title">Разработка сайтов</h3>
                         <p class="service-desc">Создадим сайт любой сложности: от лендинга до интернет-магазина. Поддержка, доработка, переработка старого кода.</p>
                         <a href="/sites/" class="service-link">Подробнее</a>
@@ -918,7 +925,7 @@
                 
                 <div class="lux-divider"></div>
                 <!-- Блок с преимуществом -->
-                <div class="advantage-block">
+                <div class="advantage-block liquid-target">
                     <p>
                         <strong>Обычно компании разделяют услуги:</strong> одни умеют только накручивать отзывы, другие — только делать сайты.<br>
                         Мы собрали полную экспертизу под одним брендом. Анализируем нишу, предлагаем стратегию и реализуем — от ПФ на Авито до запуска интернет-магазина.
@@ -928,11 +935,11 @@
                 <div class="lux-divider"></div>
                 <!-- Дополнительная статистика -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 40px 0;">
-                    <div class="stat-card" style="padding: 25px;">
+                    <div class="stat-card liquid-target" style="padding: 25px;">
                         <div class="stat-number">~7.5 млн</div>
                         <div class="stat-desc">сэкономили клиентам за 5 лет</div>
                     </div>
-                    <div class="stat-card" style="padding: 25px;">
+                    <div class="stat-card liquid-target" style="padding: 25px;">
                         <div class="stat-number">24/7</div>
                         <div class="stat-desc">отчетность по каждому проекту</div>
                     </div>
@@ -1115,6 +1122,46 @@
                 el.addEventListener('mousemove', onMove);
                 el.addEventListener('mouseleave', () => el.classList.remove('spotlight-on'));
             });
+        })();
+    </script>    <script>
+        /* Liquid scroll (mobile) */
+        (function () {
+            if (window.matchMedia('(max-width: 900px)').matches === false) return;
+
+            const targets = Array.from(document.querySelectorAll(
+                '.section, .card, .service-card, .stat-card, .case-item, .review-card, .faq-item, .mission-block, .gift-block, .contact-form, .advantage-block'
+            ));
+            if (!targets.length) return;
+
+            let lastY = window.scrollY;
+            let velocity = 0;
+            let ticking = false;
+
+            const update = () => {
+                const currentY = window.scrollY;
+                const delta = currentY - lastY;
+                lastY = currentY;
+                velocity = velocity * 0.85 + delta * 0.15;
+                const clamp = Math.max(-18, Math.min(18, velocity));
+                const blur = Math.min(1.6, Math.abs(clamp) / 12);
+
+                targets.forEach((el, i) => {
+                    const offset = (i % 3) * 0.6 + 0.6;
+                    const ty = clamp * offset;
+                    el.style.transform = `translate3d(0, ${ty}px, 0)`;
+                    el.style.filter = blur > 0.1 ? `blur(${blur}px)` : 'none';
+                });
+
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(() => {
+                        ticking = false;
+                    });
+                }
+            };
+
+            window.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+            update();
         })();
     </script></body>
 </html>
