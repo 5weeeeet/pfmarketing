@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -210,15 +210,12 @@
             margin: 0 auto 24px;
         }
         
-        .hero-badge {
-            display: inline-block;
-            background: rgba(93, 155, 255, 0.1);
-            border: 1px solid rgba(93, 155, 255, 0.3);
-            border-radius: 40px;
-            padding: 8px 20px;
+        .hero-kicker {
             font-size: 14px;
-            color: #5D9BFF;
-            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8FA7D9;
+            margin-bottom: 16px;
         }
         
         .stats-grid {
@@ -289,6 +286,8 @@
             border-radius: 24px;
             padding: 35px 25px;
             transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         
         .service-card:hover {
@@ -309,6 +308,7 @@
             margin-bottom: 25px;
             font-size: 15px;
             line-height: 1.6;
+            flex: 1;
         }
         
         .service-link {
@@ -320,6 +320,7 @@
             align-items: center;
             gap: 8px;
             transition: gap 0.3s;
+            align-self: center;
         }
         
         .service-link:hover {
@@ -395,6 +396,25 @@
             .header-contacts { gap: 10px; }
             .phone-link { font-size: 14px; }
         }
+            .global-center { }
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        .section-title,
+        .card-title,
+        .card-title-light {
+            text-align: center;
+        }
+
+        .card {
+            text-align: center;
+        }
+
+        .card p,
+        .feature-list {
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -405,8 +425,8 @@
         <!-- Шапка -->
         <header class="header">
             <div class="container">
-                <a href="/" class="logo">AVITOP<span>.</span></a>
-                <button class="nav-toggle" type="button" aria-label="������� ����" aria-expanded="false">
+                <a href="/" class="logo">PFmarketing.ru</a>
+                <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -435,7 +455,7 @@
             <div class="container">
                 <!-- Герой -->
                 <section class="section hero">
-                    <span class="hero-badge">Работаем с 2018 года</span>
+                    <div class="hero-kicker">Работаем с 2018 года</div>
                     <h1>Разработка сайтов и продвижение на Авито</h1>
                     <p>Комплексный маркетинг для бизнеса: от накрутки ПФ до интернет-магазинов под ключ</p>
                 </section>
@@ -607,6 +627,13 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

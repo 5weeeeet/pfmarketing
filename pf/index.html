@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -426,7 +426,7 @@
         }
         
         .review-photo {
-            height: 180px;
+            height: 260px;
             background: linear-gradient(145deg, #1E2530, #14181C);
             display: flex;
             align-items: center;
@@ -456,7 +456,34 @@
             display: block;
         }
         
-        .review-content {
+        
+        .equal-cards .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .equal-cards .feature-list {
+            flex: 1;
+            text-align: left;
+        }
+
+        .equal-cards p {
+            text-align: left;
+        }
+
+        .equal-cards .btn,
+        .equal-cards .btn-outline {
+            margin-top: auto;
+            align-self: center;
+        }
+
+        .hero-small h1,
+        .card-title,
+        .card-title-light {
+            text-align: center;
+        }
+.review-content {
             padding: 20px;
         }
         
@@ -627,7 +654,6 @@
             color: #6B7280;
             font-size: 14px;
         }
-        
         @media (max-width: 768px) {
             .grid-2 { grid-template-columns: 1fr; }
             .guarantee-grid { grid-template-columns: 1fr; }
@@ -636,8 +662,9 @@
             .faq-grid { grid-template-columns: 1fr; }
             .stats-mini { grid-template-columns: 1fr; }
             .hero-small h1 { font-size: 36px; }
+            .review-photo { height: 220px; }
         }
-            @media (max-width: 900px) {
+        @media (max-width: 900px) {
             .header .container { position: relative; }
             .nav {
                 display: none;
@@ -659,6 +686,25 @@
             .header-contacts { gap: 10px; }
             .phone-link { font-size: 14px; }
         }
+            .global-center { }
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        .section-title,
+        .card-title,
+        .card-title-light {
+            text-align: center;
+        }
+
+        .card {
+            text-align: center;
+        }
+
+        .card p,
+        .feature-list {
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -669,8 +715,8 @@
         <!-- Шапка -->
         <header class="header">
             <div class="container">
-                <a href="/" class="logo">AVITOP<span>.</span></a>
-                <button class="nav-toggle" type="button" aria-label="������� ����" aria-expanded="false">
+                <a href="/" class="logo">PFmarketing.ru</a>
+                <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -747,7 +793,7 @@
                 
                 <!-- Тарифы (2 колонки) -->
                 <h2 class="card-title" style="margin: 40px 0 20px;">Тарифы на ПФ</h2>
-                <div class="grid-2">
+                <div class="grid-2 equal-cards">
                     <!-- Премиум ПФ услуги -->
                     <div class="card">
                         <div class="badge">Хит продаж</div>
@@ -787,7 +833,7 @@
                 
                 <!-- Дополнительные услуги (консультация, наставничество, запуск) -->
                 <h2 class="card-title" style="margin: 60px 0 20px;">Комплексные услуги</h2>
-                <div class="grid-2">
+                <div class="grid-2 equal-cards">
                     <div class="card">
                         <div class="card-title">Консультация</div>
                         <div class="price">5 000₽</div>
@@ -810,12 +856,12 @@
                     </div>
                 </div>
                 <div style="text-align: center; margin: 10px 0 30px;">
-                    <a href="#order" class="btn btn-large">�������� ������</a>
+                    <a href="#order" class="btn btn-large">Оставить заявку</a>
                 </div>
                 
                 <!-- Услуги по объявлениям -->
                 <h2 class="card-title" style="margin: 40px 0 20px;">Создание и оформление объявлений</h2>
-                <div class="grid-2">
+                <div class="grid-2 equal-cards">
                     <div class="card">
                         <div class="badge">−37%</div>
                         <div class="card-title">Продающие объявления</div>
@@ -851,7 +897,7 @@
                     </div>
                 </div>
                 <div style="text-align: center; margin: 10px 0 30px;">
-                    <a href="#order" class="btn btn-large">�������� ����������</a>
+                    <a href="#order" class="btn btn-large">Оставить заявку</a>
                 </div>
                 
                 <!-- Отзывы клиентов с фото (сетка 4) -->
@@ -969,7 +1015,7 @@
                     
                     <div class="social-links">
                         <a href="https://t.me/avitop_pro_owner"" class="social-link">📱 Telegram</a>
-                        <a href="https://t.me/avitop_pro_owner" class="social-link">📞 WhatsApp</a>
+                        <a href="tel:+79898219218" class="social-link">📞 MAX: +7 989 821-92-18</a>
                         <a href="tel:+79898219218" class="social-link">📞 Позвонить</a>
                     </div>
                     
@@ -1079,6 +1125,22 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
