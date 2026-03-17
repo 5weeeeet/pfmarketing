@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Контакты | AVITOP</title>
+	<title>Контакты | PFMarketing</title>
 	<meta name="description" content="Контакты PFMarketing — телефон, Telegram и MAX.">
     <link rel="canonical" href="https://pfmarketing.ru/contacts/">
     <meta name="robots" content="index,follow">
@@ -21,14 +21,17 @@
         }
     }
     </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Библиотека частиц -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<style>
 		body { font-family: 'Sora', sans-serif; background: #0A0C0F; color: #E0E4E9; margin:0; 
             text-align: center;
         }
-		.container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+		.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 		.header { padding: 16px 0; background: rgba(10,12,15,0.8); border-bottom: 1px solid rgba(93,155,255,0.1); position: sticky; top:0 }
 		.header .container { display:flex; justify-content:space-between; align-items:center }
 		.logo { color:#fff; font-weight:700; text-decoration:none }
@@ -81,6 +84,7 @@
 		.contacts { background: rgba(20,24,28,0.6); padding:30px; border-radius:12px; margin-top:30px }
 		h1, h2, h3 { text-align: center; }
 		a.contact-link { color:#5D9BFF; text-decoration:none }
+\tmain.container { padding: 40px 20px 0; }
 
 		@media (max-width: 900px) {
 			.header .container { position: relative; }
@@ -282,6 +286,11 @@
         }</style>
 </head>
 <body>
+
+    <div class="fx-bg"></div>
+    <div id="particles-js"></div>
+    
+    <div class="wrapper">
 	<div class="wrapper">
 		<header class="header">
 			<div class="container">
@@ -337,10 +346,48 @@
 					<span> · </span>
 					<a href="/sitemap/" style="color: #A0A8B5; text-decoration: none;">Карта сайта</a>
 				</div>
-			</div>
-		</footer>
-	</div>
+			
     <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: ['#5D9BFF', '#BD7AFF'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.6, random: true },
+                size: { value: 2.8, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 170,
+                    color: '#8AB4FF',
+                    opacity: 0.25,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1.2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'window',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    repulse: { distance: 100 },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+<script>
         (function () {
             const toggle = document.querySelector('.nav-toggle');
             const nav = document.querySelector('.nav');
