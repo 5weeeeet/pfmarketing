@@ -55,7 +55,14 @@
         }
         .feature-list { text-align: center; list-style-position: inside; padding-left: 0; }
         .feature-list li { margin-left: 0; }
-</style>
+        /* Center override */
+        body { text-align: center; }
+        h1, h2, h3, p, li { text-align: center; }
+        .card, .section, .container { text-align: center; }
+        .card p, .feature-list { text-align: center !important; }
+        .feature-list { list-style: disc; list-style-position: inside; padding-left: 0; }
+        .feature-list li { padding-left: 0; }
+        .feature-list li::before { content: none; }</style>
 </head>
 <body>
     <div id="particles-js"></div>
@@ -155,6 +162,7 @@
 
 </body>
 </html>
+
 
 
 
