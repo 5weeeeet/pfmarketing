@@ -948,7 +948,15 @@
         }
         .spotlight-host.spotlight-on::after {
             opacity: 1;
-        }</style>
+        }
+        /* Hide Yandex Metrika informer */
+        .ym-advanced-informer,
+        #ym-advanced-informer,
+        .yandex-metrika-informer,
+        a[href*="metrika.yandex.ru"] img[src*="informer"] {
+            display: none !important;
+        }
+</style>
 </head>
 <body>
 
