@@ -1,1241 +1,1241 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Цены | PFmarketing.ru</title>
-    <meta name="description" content="Цены на услуги PFmarketing: Авитолог, ПФ и отзывы, сайты под ключ. Все категории и описания на одной странице.">
-
-        <link rel="canonical" href="https://pfmarketing.ru/prices/">
-    <meta name="robots" content="index,follow">
-<!-- Библиотека частиц -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-    <!-- Шрифты -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Sora', sans-serif;
-            background: #0A0C0F;
-            color: #E0E4E9;
-            line-height: 1.5;
-        
-            text-align: center;
-        }
-
-        #particles-js {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background: transparent;
-            pointer-events: none;
-        }
-
-        .wrapper {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header {
-            padding: 16px 0;
-            pointer-events: auto;
-            border-bottom: 1px solid rgba(93, 155, 255, 0.1);
-            backdrop-filter: blur(10px);
-            background: rgba(10, 12, 15, 0.8);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #FFFFFF;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        .nav {
-            display: flex;
-            gap: 32px;
-        }
-
-        .nav a {
-            color: #E0E4E9;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav a:hover,
-        .nav a.active {
-            color: #5D9BFF;
-        }
-
-        .nav-toggle {
-            display: none;
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            border: 1px solid rgba(93, 155, 255, 0.35);
-            background: rgba(20, 24, 28, 0.7);
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            cursor: pointer;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .nav-toggle span {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: #E0E4E9;
-            border-radius: 2px;
-            transition: transform 0.3s, opacity 0.3s;
-        }
-
-        .nav-toggle[aria-expanded="true"] span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .nav-toggle[aria-expanded="true"] span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggle[aria-expanded="true"] span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        .header-contacts {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .phone-link {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        .phone-link:hover {
-            color: #5D9BFF;
-        }
-
-        .tg-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #5D9BFF;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-
-        .tg-link:hover {
-            background: #BD7AFF;
-            transform: translateY(-2px);
-        }
-
-        .tg-link svg {
-            width: 20px;
-            height: 20px;
-            fill: #0A0C0F;
-        }
-
-        .breadcrumbs {
-            padding: 20px 0;
-            pointer-events: auto;
-            font-size: 14px;
-            color: #6B7280;
-        }
-
-        .breadcrumbs a {
-            color: #6B7280;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .breadcrumbs a:hover {
-            color: #5D9BFF;
-        }
-
-        .breadcrumbs span {
-            color: #E0E4E9;
-        }
-
-        .section {
-            padding: 40px 0;
-            pointer-events: auto;
-        }
-
-        .hero-small {
-            padding: 20px 0 40px;
-            text-align: center;
-        }
-
-        .hero-small h1 {
-            font-size: 52px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #FFFFFF 0%, #5D9BFF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-small .subhead {
-            font-size: 20px;
-            color: #A0A8B5;
-            max-width: 720px;
-            margin: 0 auto 24px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .section-title {
-            font-size: 32px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 12px;
-        }
-
-        .section-sub {
-            text-align: center;
-            color: #A0A8B5;
-            max-width: 720px;
-            margin: 0 auto 30px;
-        }
-
-        .section-subtitle {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 30px 0 20px;
-            text-align: center;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .card {
-            background: rgba(20, 24, 28, 0.6);
-            border: 1px solid rgba(93, 155, 255, 0.15);
-            border-radius: 24px;
-            padding: 28px 24px;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            border-color: #5D9BFF;
-            transform: translateY(-4px);
-        }
-
-        .card-title-light {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .price {
-            font-size: 28px;
-            font-weight: 700;
-            color: #5D9BFF;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .price small {
-            font-size: 14px;
-            color: #A0A8B5;
-            font-weight: 500;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-top: 12px;
-            color: #A0A8B5;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .feature-list li {
-            margin-bottom: 6px;
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .feature-list li::before {
-            content: "•";
-            color: #5D9BFF;
-            position: absolute;
-            left: 0;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(93, 155, 255, 0.2);
-            color: #5D9BFF;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .badge.badge-purple {
-            background: rgba(189, 122, 255, 0.2);
-            color: #BD7AFF;
-        }
-
-        .card-note {
-            color: #5D9BFF;
-            font-size: 14px;
-            margin-top: 12px;
-            text-align: center;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 16px;
-            justify-content: center;
-        }
-
-        .tech-tag {
-            font-size: 12px;
-            color: #8FA7D9;
-            border: 1px solid rgba(93, 155, 255, 0.3);
-            padding: 4px 8px;
-            border-radius: 999px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            background: #5D9BFF;
-            color: #0A0C0F;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.3s;
-            border: 2px solid #5D9BFF;
-        }
-
-        .btn:hover {
-            background: transparent;
-            color: #5D9BFF;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #5D9BFF;
-        }
-
-        .btn-large {
-            padding: 16px 36px;
-            font-size: 16px;
-        }
-
-        .cta-block {
-            text-align: center;
-            margin: 50px 0 20px;
-        }
-
-        .footer {
-            padding: 30px 0;
-            border-top: 1px solid rgba(93, 155, 255, 0.1);
-            text-align: center;
-            color: #A0A8B5;
-            font-size: 14px;
-        }
-        .footer a { color: #A0A8B5; text-decoration: none; }
-        .footer a:hover { color: #5D9BFF; }
-        h1, h2, h3 { text-align: center; }
-
-        @media (max-width: 980px) {
-            .header .container {
-                flex-wrap: wrap;
-                gap: 16px;
-            }
-
-            .nav {
-                display: none;
-                flex-direction: column;
-                gap: 14px;
-                width: 100%;
-                padding: 16px;
-                background: rgba(10, 12, 15, 0.95);
-                border: 1px solid rgba(93, 155, 255, 0.2);
-                border-radius: 16px;
-            }
-
-            .nav.open {
-                display: flex;
-            }
-
-            .nav-toggle {
-                display: inline-flex;
-            }
-
-            .header-contacts {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .grid-3 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero-small h1 {
-                font-size: 40px;
-            }
-        }
-
-        @media (max-width: 720px) {
-            .grid-3,
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-small h1 {
-                font-size: 32px;
-            }
-
-            .hero-small .subhead {
-                font-size: 16px;
-            }
-        }
-        .feature-list { text-align: center; list-style-position: inside; padding-left: 0; }
-        .feature-list li { margin-left: 0; }
-        /* Center override */
-        body { text-align: center; }
-        h1, h2, h3, p, li { text-align: center; }
-        .card, .section, .container { text-align: center; }
-        .card p, .feature-list { text-align: center !important; }
-        .feature-list { list-style: disc; list-style-position: inside; padding-left: 0; }
-        .feature-list li { padding-left: 0; }
-        .feature-list li::before { content: none; }        /* Unified spacing */
-        :root {
-            --space-1: 8px;
-            --space-2: 12px;
-            --space-3: 16px;
-            --space-4: 24px;
-            --space-5: 32px;
-            --space-6: 40px;
-            --space-7: 56px;
-        }
-        .section { padding: var(--space-7) 0; }
-        .section-title { margin-bottom: var(--space-3); }
-        .section-sub { margin-bottom: var(--space-5); }
-        h1, h2, h3, h4 { margin: 0 0 var(--space-3); }
-        p { margin: 0 0 var(--space-2); }
-        p:last-child { margin-bottom: 0; }
-        .card-title,
-        .card-title-light { margin-bottom: var(--space-2); }
-        .feature-list { margin: var(--space-3) 0; }
-        .grid-2, .grid-3, .grid-4 { margin: var(--space-4) 0; }        /* FX: modern cosmic glow */
-        .fx-bg {
-            position: fixed;
-            inset: -10%;
-            background: linear-gradient(120deg, rgba(93, 155, 255, 0.14), rgba(189, 122, 255, 0.12), rgba(10, 12, 15, 0.2));
-            background-size: 200% 200%;
-            animation: gradientShift 18s ease infinite;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .fx-bg::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(0deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 2px),
-                linear-gradient(90deg, rgba(0,0,0,0.02) 0, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 2px);
-            background-size: 3px 3px;
-            opacity: 0.35;
-            mix-blend-mode: soft-light;
-        }
-        #particles-js { z-index: 1; }
-        .wrapper { z-index: 2; }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        /* Premium UI */
-        h1, h2, h3 { letter-spacing: -0.02em; }
-        .card, .service-card, .stat-card, .case-item, .review-card, .faq-item {
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(93, 155, 255, 0.12);
-            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-            will-change: transform;
-        }
-        .card:hover, .service-card:hover, .stat-card:hover, .case-item:hover, .review-card:hover, .faq-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(93, 155, 255, 0.28);
-        }
-        .btn, .btn-outline, .service-link {
-            transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease, color 0.35s ease;
-        }
-        .btn:hover, .btn-outline:hover, .service-link:hover {
-            transform: translateY(-2px);
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(18px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal.in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity: 1; transform: none; }
-        }
-        /* Luxury Header */
-        .header {
-            position: sticky;
-            background: rgba(10, 12, 15, 0.78);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
-            border-bottom: 1px solid rgba(93, 155, 255, 0.18);
-        }
-        .header::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, rgba(93,155,255,0.08), rgba(189,122,255,0.06), rgba(93,155,255,0.08));
-            opacity: 0.6;
-            pointer-events: none;
-        }
-        .header .container { gap: 20px; }
-        .nav a {
-            position: relative;
-            padding: 6px 0;
-            font-weight: 600;
-        }
-        .nav a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -6px;
-            height: 2px;
-            background: linear-gradient(90deg, #5D9BFF, #BD7AFF);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-        .nav a:hover::after,
-        .nav a.active::after {
-            transform: scaleX(1);
-        }
-        .nav-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(6, 8, 12, 0.6);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease;
-            z-index: 9;
-        }
-        body.nav-open .nav-backdrop {
-            opacity: 1;
-            visibility: visible;
-        }
-        @media (max-width: 900px) {
-            .header { backdrop-filter: blur(14px); }
-            .phone-link { display: none; }
-            .nav {
-                position: fixed;
-                top: 72px;
-                right: 16px;
-                left: 16px;
-                flex-direction: column;
-                gap: 12px;
-                background: rgba(10, 12, 15, 0.98);
-                border: 1px solid rgba(93, 155, 255, 0.25);
-                padding: 16px;
-                border-radius: 18px;
-                box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
-                opacity: 0;
-                transform: translateY(-10px);
-                pointer-events: none;
-                z-index: 10;
-            }
-            .nav.open {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-            }
-            .nav a { padding: 10px 8px; }
-        }
-        /* Header Unified */
-        .header {
-            padding: 16px 0;
-            pointer-events: auto;
-            border-bottom: 1px solid rgba(93, 155, 255, 0.18);
-            backdrop-filter: blur(14px);
-            background: rgba(10, 12, 15, 0.78);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
-        }
-        .header::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, rgba(93,155,255,0.08), rgba(189,122,255,0.06), rgba(93,155,255,0.08));
-            opacity: 0.6;
-            pointer-events: none;
-        }
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            position: relative;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #FFFFFF;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-        .nav {
-            display: flex;
-            gap: 32px;
-        }
-        .nav a {
-            color: #E0E4E9;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            position: relative;
-            padding: 6px 0;
-            transition: color 0.3s;
-        }
-        .nav a:hover { color: #5D9BFF; text-shadow: 0 0 12px rgba(93, 155, 255, 0.6), 0 0 24px rgba(189, 122, 255, 0.35); }
-        .nav a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -6px;
-            height: 2px;
-            background: linear-gradient(90deg, #5D9BFF, #BD7AFF);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-        .nav a:hover::after,
-        .nav a.active::after {
-            transform: scaleX(1);
-        }
-        .nav-toggle {
-            display: none;
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            border: 1px solid rgba(93, 155, 255, 0.35);
-            background: rgba(20, 24, 28, 0.7);
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            cursor: pointer;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-        .nav-toggle:hover {
-            border-color: #5D9BFF;
-            transform: translateY(-1px);
-        }
-        .nav-toggle span {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: #E0E4E9;
-            border-radius: 2px;
-            transition: transform 0.3s, opacity 0.3s;
-        }
-        .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-        .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-        .header-contacts {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .phone-link {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-        .phone-link:hover { color: #5D9BFF; }
-        .tg-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #5D9BFF;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        .tg-link:hover {
-            background: #BD7AFF;
-            transform: translateY(-2px);
-        }
-        .tg-link svg { width: 20px; height: 20px; fill: #0A0C0F; }
-        .nav-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(6, 8, 12, 0.6);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease;
-            z-index: 9;
-        }
-        body.nav-open .nav-backdrop {
-            opacity: 1;
-            visibility: visible;
-        }
-        @media (max-width: 900px) {
-            .phone-link { display: none; }
-            .nav {
-                position: fixed;
-                top: 72px;
-                right: 16px;
-                left: 16px;
-                flex-direction: column;
-                gap: 12px;
-                background: rgba(10, 12, 15, 0.98);
-                border: 1px solid rgba(93, 155, 255, 0.25);
-                padding: 16px;
-                border-radius: 18px;
-                box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
-                opacity: 0;
-                transform: translateY(-10px);
-                pointer-events: none;
-                z-index: 10;
-            }
-            .nav.open {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-            }
-            .nav a { padding: 10px 8px; }
-            .nav-toggle { display: inline-flex; }
-        }
-.wrapper p:hover,
-        .wrapper li:hover,
-        .wrapper .section-title:hover,
-        .wrapper .section-sub:hover,
-        .wrapper .card-title:hover,
-        .wrapper .card-title-light:hover,
-        .wrapper .service-title:hover,
-        .wrapper .service-desc:hover,
-        .wrapper .contact-link:hover {
-            color: #E6F0FF;
-            text-shadow: 0 0 10px rgba(93, 155, 255, 0.35), 0 0 18px rgba(189, 122, 255, 0.25);
-        }        /* Text spotlight */
-        .spotlight-host {
-            position: relative;
-        }
-        .spotlight-host::after {
-            content: attr(data-spotlight);
-            position: absolute;
-            inset: 0;
-            color: transparent;
-            text-shadow: 0 0 10px rgba(93, 155, 255, 0.55), 0 0 22px rgba(189, 122, 255, 0.35);
-            -webkit-mask-image: radial-gradient(60px circle at var(--mx) var(--my), #000 0%, #000 40%, transparent 70%);
-            mask-image: radial-gradient(60px circle at var(--mx) var(--my), #000 0%, #000 40%, transparent 70%);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.12s ease;
-            white-space: pre-wrap;
-            font: inherit;
-            line-height: inherit;
-            letter-spacing: inherit;
-            text-transform: inherit;
-        }
-        .spotlight-host.spotlight-on::after {
-            opacity: 1;
-        }        .max-float {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            padding: 14px 16px;
-            border-radius: 999px;
-            background: #0f172a;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            z-index: 9999;
-            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
-        }
-        .max-float:hover { transform: translateY(-1px); }
-        /* Hide Yandex Metrika informer */
-        .ym-advanced-informer,
-        #ym-advanced-informer,
-        .yandex-metrika-informer,
-        a[href*="metrika.yandex.ru"] img[src*="informer"] {
-            display: none !important;
-        }
-</style>
-
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0b0f17">
-</head>
-<body>
-
-    <div class="fx-bg"></div>
-    <div id="particles-js"></div>
-
-    <div class="wrapper">
-                <header class="header">
-            <div class="container">
-                <a href="/" class="logo">PFmarketing.ru</a>
-                <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <nav class="nav">
-                    <a href="/avitolog/">Авитолог</a>
-                    <a href="/pf/">ПФ и отзывы</a>
-                    <a href="/audit/">Аудит</a>
-                    <a href="/sites/">Сайты под ключ</a>
-                    <a href="/prices/" class="active">Цены</a>
-                    <a href="/contacts/">Контакты</a>
-                </nav>
-                <div class="header-contacts">
-                    <a href="tel:+79898219218" class="phone-link">+7 989 821-92-18</a>
-                    <a href="https://t.me/avitop_pro_owner" target="_blank" class="tg-link" aria-label="Telegram">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248c-.183 1.92-.978 6.58-1.382 8.728-.171.912-.51 1.217-.837 1.247-.712.066-1.252-.47-1.942-.922-1.078-.706-1.688-1.145-2.735-1.834-1.21-.796-.426-1.234.264-1.95.18-.187 3.286-3.012 3.346-3.27.007-.032.014-.15-.056-.212-.07-.063-.173-.042-.248-.024-.106.025-1.79 1.137-5.053 3.34-.478.328-.91.488-1.298.48-.427-.01-1.25-.242-1.862-.44-.75-.244-1.346-.373-1.294-.787.027-.216.325-.438.893-.664 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.1-.002.323.023.468.14.117.097.15.226.166.318.015.092.034.302.019.466z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="nav-backdrop" aria-hidden="true"></div>
-        </header>
-
-        <div class="container">
-            <div class="breadcrumbs">
-                <a href="/">Главная</a> / <span>Цены</span>
-            </div>
-        </div>
-
-        <main>
-            <div class="container">
-                <section class="hero-small">
-                    <h1>Цены на услуги PFmarketing</h1>
-                    <p class="subhead">Собрали все тарифы и услуги в одном месте. Выберите направление и отправьте заявку — ответим в течение дня.</p>
-                    <div class="hero-actions">
-                        <a href="/contacts/" class="btn btn-large">Оставить заявку</a>
-                        <a href="#pf" class="btn btn-outline btn-large">ПФ и отзывы</a>
-                    </div>
-                </section>
-
-                <section class="section" id="avitolog">
-                    <h2 class="section-title">Авитолог</h2>
-                    <p class="section-sub">Продвижение аккаунтов и объявлений на Авито с фокусом на безопасность и рост позиций. Ниже — авитолог цена и услуги, если нужно быстро продвинуть авито.</p>
-                    <div class="grid-3">
-                        <div class="card">
-                            <h3 class="card-title-light">Накрутка ПФ</h3>
-                            <div class="price">от 5 ₽ <small>/шт</small></div>
-                            <p style="color: #A0A8B5;">Поведенческие факторы высокого качества. Заказ от 20 шт/день — авито пф для роста заявок.</p>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Накрутка отзывов</h3>
-                            <div class="price">5 990 ₽</div>
-                            <p style="color: #A0A8B5;">Реальные отзывы, которые не слетают. Гарантия.</p>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Аудит профиля</h3>
-                            <div class="price">2 990 ₽</div>
-                            <p style="color: #A0A8B5;">Полный разбор аккаунта, объявлений и конкурентов.</p>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Обучение</h3>
-                            <div class="price">29 990 ₽</div>
-                            <p style="color: #A0A8B5;">Алгоритмы, стратегии, фишки. Стань авитологом сам.</p>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Стратегия</h3>
-                            <div class="price">9 990 ₽</div>
-                            <p style="color: #A0A8B5;">Индивидуальный план продвижения под ваш бизнес.</p>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Ведение под ключ</h3>
-                            <div class="price">от 19 900 ₽</div>
-                            <p style="color: #A0A8B5;">Полное управление рекламой и ПФ. Отчеты 24/7.</p>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Консультация «вопрос-ответ»</h3>
-                            <div class="price">4 990 ₽ <small>/час</small></div>
-                            <p style="color: #A0A8B5;">Час плотной работы по вашему аккаунту. Разбираем всё до мелочей.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section" id="pf">
-                    <h2 class="section-title">ПФ и отзывы</h2>
-                    <p class="section-sub">Тарифы по поведенческим факторам, сопровождение и оформление объявлений. Здесь собраны решения, чтобы поднять объявление на авито и подобрать прозрачную поднять объявление на авито цена.</p>
-
-                    <h3 class="section-subtitle">Тарифы на ПФ</h3>
-                    <div class="grid-2">
-                        <div class="card">
-                            <div class="badge">Хит продаж</div>
-                            <h3 class="card-title-light">Премиум ПФ <small>для услуг</small></h3>
-                            <div class="price">от 5₽ <small>/ за 1 ПФ</small></div>
-                            <ul class="feature-list">
-                                <li>3 минуты на объявлении</li>
-                                <li>Просмотр фото и видео</li>
-                                <li>Просмотр контакта</li>
-                                <li>Просмотр геолокации</li>
-                                <li>Кнопка «читать далее»</li>
-                                <li>Читает описание</li>
-                                <li>Добавляет в избранное</li>
-                                <li>Переходит в отзывы</li>
-                                <li>Переход в профиль</li>
-                            </ul>
-                            <div class="card-note">🎁 Бонус: стратегия продвижения</div>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Премиум ПФ <small>для товаров</small></h3>
-                            <div class="price">от 5₽ <small>/ за 1 ПФ</small></div>
-                            <ul class="feature-list">
-                                <li>4-5 минут на объявлении</li>
-                                <li>Просмотр фото и видео</li>
-                                <li>Просмотр контакта</li>
-                                <li>Кнопка «читать далее»</li>
-                                <li>Читает описание</li>
-                                <li>Добавляет в избранное</li>
-                            </ul>
-                            <div class="card-note">🎁 Бонус: стратегия продвижения</div>
-                        </div>
-                    </div>
-                    <p style="color: #8FA7D9; margin-top: 16px;">Если нужно авито продвижение объявления и авито поднять просмотры — подберем оптимальный пакет под вашу нишу.</p>
-
-                    <h3 class="section-subtitle">Комплексные услуги</h3>
-                    <div class="grid-2">
-                        <div class="card">
-                            <h3 class="card-title-light">Консультация</h3>
-                            <div class="price">5 000₽</div>
-                            <p style="color: #A0A8B5;">Часовая консультация: оформление аккаунта, продающие объявления, платное продвижение.</p>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Наставничество</h3>
-                            <div class="price">150 000₽</div>
-                            <p style="color: #A0A8B5;">Помощь в развитии, продвижение на Авито, создание контента, стратегии. Выход на 13 000₽/день.</p>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Запуск проекта</h3>
-                            <div class="price">50 000₽</div>
-                            <p style="color: #A0A8B5;">Анализ рынка, выбор ниши, работа с поставщиками, тесты, стратегии. Запуск за 2 недели.</p>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Самовыкуп товаров</h3>
-                            <div class="price">1 000₽</div>
-                            <p style="color: #A0A8B5;">Быстрый и безопасный самовыкуп для повышения видимости товаров.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="section-subtitle">Создание и оформление объявлений</h3>
-                    <div class="grid-2">
-                        <div class="card">
-                            <div class="badge">−37%</div>
-                            <h3 class="card-title-light">Продающие объявления</h3>
-                            <div class="price">2 500₽ <small style="text-decoration: line-through; color: #6B7280;">3 990₽</small></div>
-                            <ul class="feature-list">
-                                <li>Анализ рынка и ЦА</li>
-                                <li>Ключевые преимущества</li>
-                                <li>SEO-оптимизация</li>
-                                <li>Инфографика на фото</li>
-                                <li>🎁 10 ПФ в подарок</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Разработка объявления</h3>
-                            <div class="price">15 000₽</div>
-                            <ul class="feature-list">
-                                <li>Глубокий анализ конкурентов</li>
-                                <li>Выявление преимуществ</li>
-                                <li>Уникальный SEO-текст</li>
-                                <li>Инфографика на 2 фото</li>
-                                <li>Топ при мин. затратах</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Инфографика</h3>
-                            <div class="price">1 000₽</div>
-                            <p style="color: #A0A8B5;">Продающий заголовок на фото. Вовлечение клиента по алгоритмам площадки.</p>
-                        </div>
-                        <div class="card">
-                            <h3 class="card-title-light">Ключевые слова</h3>
-                            <div class="price">1 000₽</div>
-                            <p style="color: #A0A8B5;">Подбор ключевых слов для максимальной видимости объявлений.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section" id="sites">
-                    <h2 class="section-title">Сайты под ключ</h2>
-                    <p class="section-sub">Разработка сайтов и сложных digital-продуктов с учетом задач бизнеса.</p>
-                    <div class="grid-3">
-                        <div class="card">
-                            <div class="badge">Старт</div>
-                            <h3 class="card-title-light">Сайт-визитка / Лендинг</h3>
-                            <div class="price">от 50 000 ₽</div>
-                            <ul class="feature-list">
-                                <li>Уникальный дизайн</li>
-                                <li>Адаптивная верстка</li>
-                                <li>SEO-оптимизация базовая</li>
-                                <li>Форма обратной связи</li>
-                                <li>Подключение аналитики</li>
-                            </ul>
-                            <div class="tech-tags">
-                                <span class="tech-tag">HTML/CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Адаптив</span>
-                            </div>
-                        </div>
-                        <div class="card" style="border-color: #5D9BFF;">
-                            <div class="badge badge-purple">Популярное</div>
-                            <h3 class="card-title-light">Интернет-магазин / Каталог</h3>
-                            <div class="price">от 150 000 ₽</div>
-                            <ul class="feature-list">
-                                <li>Каталог товаров с фильтрами</li>
-                                <li>Корзина и оформление заказа</li>
-                                <li>Интеграция с платежными системами</li>
-                                <li>Личный кабинет пользователя</li>
-                                <li>Админка для управления</li>
-                                <li>CRM-интеграция (Битрикс24, amoCRM)</li>
-                            </ul>
-                            <div class="tech-tags">
-                                <span class="tech-tag">React/Vue</span>
-                                <span class="tech-tag">Node.js/PHP</span>
-                                <span class="tech-tag">MySQL/PostgreSQL</span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="badge">Под ключ</div>
-                            <h3 class="card-title-light">Маркетплейс / Приложение</h3>
-                            <div class="price">от 300 000 ₽</div>
-                            <ul class="feature-list">
-                                <li>Сложная логика и несколько ролей</li>
-                                <li>Мобильное приложение (iOS/Android)</li>
-                                <li>Интеграция с 1С и внешними сервисами</li>
-                                <li>Высокая нагрузка и оптимизация</li>
-                                <li>Личные кабинеты для партнеров</li>
-                                <li>API для сторонних сервисов</li>
-                            </ul>
-                            <div class="tech-tags">
-                                <span class="tech-tag">React Native</span>
-                                <span class="tech-tag">Node.js/Python</span>
-                                <span class="tech-tag">Docker/К8s</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="cta-block">
-                    <a href="/contacts/" class="btn btn-large">Получить расчет</a>
-                </div>
-            </div>
-        </main>
-
-        <footer class="footer">
-            <div class="container">
-                <div>© 2023-2025 PFMarketing — Авитолог, ПФ, продвижение</div>
-                <div>+7 989 821-92-18 | @avitop_pro_owner</div>
-                <div>
-                    <a href="/privacy/">Политика конфиденциальности</a>
-                    <span> · </span>
-                    <a href="/sitemap/">Карта сайта</a>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: ['#5D9BFF', '#BD7AFF'] },
-                shape: { type: 'circle' },
-                opacity: { value: 0.6, random: true },
-                size: { value: 2.8, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 170,
-                    color: '#8AB4FF',
-                    opacity: 0.25,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 1.2,
-                    direction: 'none',
-                    random: false,
-                    straight: false,
-                    out_mode: 'out',
-                    bounce: false
-                }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: {
-                    onhover: { enable: false },
-                    onclick: { enable: false },
-                    resize: true
-                }
-            },
-            retina_detect: true
-        });
-
-        const toggle = document.querySelector('.nav-toggle');
-        const nav = document.querySelector('.nav');
-
-        if (toggle && nav) {
-            toggle.addEventListener('click', () => {
-                const isOpen = nav.classList.toggle('open');
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            });
-
-            nav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (nav.classList.contains('open')) {
-                        nav.classList.remove('open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            });
-        }
-    </script>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107738668', 'ym');
-
-    ym(107738668, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/107738668" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-    <script>
-        /* FX reveal */
-        (function () {
-            const targets = document.querySelectorAll(
-                '.section-title, .section-sub, .card, .service-card, .stat-card, .case-item, .review-card, .faq-item, .feature-list'
-            );
-            if (!('IntersectionObserver' in window)) {
-                targets.forEach(el => el.classList.add('reveal', 'in'));
-                return;
-            }
-            const io = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('reveal', 'in');
-                        io.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15 });
-            targets.forEach(el => {
-                el.classList.add('reveal');
-                io.observe(el);
-            });
-        })();
-    </script>    <script>
-        /* Text spotlight */
-        (function () {
-            const selector = '.wrapper p, .wrapper li, .wrapper .section-title, .wrapper .section-sub, .wrapper .card-title, .wrapper .card-title-light, .wrapper .service-title, .wrapper .service-desc, .wrapper .contact-link';
-            const elements = Array.from(document.querySelectorAll(selector));
-            elements.forEach(el => {
-                const text = el.innerText;
-                if (!text) return;
-                el.classList.add('spotlight-host');
-                el.setAttribute('data-spotlight', text);
-            });
-
-            const onMove = (event) => {
-                const target = event.target.closest(selector);
-                if (!target) return;
-                const rect = target.getBoundingClientRect();
-                const x = event.clientX - rect.left;
-                const y = event.clientY - rect.top;
-                target.classList.add('spotlight-on');
-                target.style.setProperty('--mx', x + 'px');
-                target.style.setProperty('--my', y + 'px');
-            };
-
-            elements.forEach(el => {
-                el.addEventListener('mousemove', onMove);
-                el.addEventListener('mouseleave', () => el.classList.remove('spotlight-on'));
-            });
-        })();
-    </script><a class="max-float" href="https://max.ru/u/f9LHodD0cOL5MEYcJJ7xlrCFJYKvoZpKB4P4n9tP_PN-sB2Hw7O-060-Raw" target="_blank" rel="noopener">Написать в MAX</a></body>
-</html>
-
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цены | PFmarketing.ru</title>
+    <meta name="description" content="Цены на услуги PFmarketing: Авитолог, ПФ и отзывы, сайты под ключ. Все категории и описания на одной странице.">
+
+        <link rel="canonical" href="https://pfmarketing.ru/prices/">
+    <meta name="robots" content="index,follow">
+<!-- Библиотека частиц -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sora', sans-serif;
+            background: #0A0C0F;
+            color: #E0E4E9;
+            line-height: 1.5;
+        
+            text-align: center;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: transparent;
+            pointer-events: none;
+        }
+
+        .wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            padding: 16px 0;
+            pointer-events: auto;
+            border-bottom: 1px solid rgba(93, 155, 255, 0.1);
+            backdrop-filter: blur(10px);
+            background: rgba(10, 12, 15, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav a {
+            color: #E0E4E9;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: #5D9BFF;
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            border: 1px solid rgba(93, 155, 255, 0.35);
+            background: rgba(20, 24, 28, 0.7);
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #E0E4E9;
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .phone-link {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .phone-link:hover {
+            color: #5D9BFF;
+        }
+
+        .tg-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #5D9BFF;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .tg-link:hover {
+            background: #BD7AFF;
+            transform: translateY(-2px);
+        }
+
+        .tg-link svg {
+            width: 20px;
+            height: 20px;
+            fill: #0A0C0F;
+        }
+
+        .breadcrumbs {
+            padding: 20px 0;
+            pointer-events: auto;
+            font-size: 14px;
+            color: #6B7280;
+        }
+
+        .breadcrumbs a {
+            color: #6B7280;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: #5D9BFF;
+        }
+
+        .breadcrumbs span {
+            color: #E0E4E9;
+        }
+
+        .section {
+            padding: 40px 0;
+            pointer-events: auto;
+        }
+
+        .hero-small {
+            padding: 20px 0 40px;
+            text-align: center;
+        }
+
+        .hero-small h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #5D9BFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-small .subhead {
+            font-size: 20px;
+            color: #A0A8B5;
+            max-width: 720px;
+            margin: 0 auto 24px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #A0A8B5;
+            max-width: 720px;
+            margin: 0 auto 30px;
+        }
+
+        .section-subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 30px 0 20px;
+            text-align: center;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: rgba(20, 24, 28, 0.6);
+            border: 1px solid rgba(93, 155, 255, 0.15);
+            border-radius: 24px;
+            padding: 28px 24px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            border-color: #5D9BFF;
+            transform: translateY(-4px);
+        }
+
+        .card-title-light {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #5D9BFF;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .price small {
+            font-size: 14px;
+            color: #A0A8B5;
+            font-weight: 500;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 12px;
+            color: #A0A8B5;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .feature-list li {
+            margin-bottom: 6px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "•";
+            color: #5D9BFF;
+            position: absolute;
+            left: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(93, 155, 255, 0.2);
+            color: #5D9BFF;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .badge.badge-purple {
+            background: rgba(189, 122, 255, 0.2);
+            color: #BD7AFF;
+        }
+
+        .card-note {
+            color: #5D9BFF;
+            font-size: 14px;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+            justify-content: center;
+        }
+
+        .tech-tag {
+            font-size: 12px;
+            color: #8FA7D9;
+            border: 1px solid rgba(93, 155, 255, 0.3);
+            padding: 4px 8px;
+            border-radius: 999px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #5D9BFF;
+            color: #0A0C0F;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s;
+            border: 2px solid #5D9BFF;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #5D9BFF;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #5D9BFF;
+        }
+
+        .btn-large {
+            padding: 16px 36px;
+            font-size: 16px;
+        }
+
+        .cta-block {
+            text-align: center;
+            margin: 50px 0 20px;
+        }
+
+        .footer {
+            padding: 30px 0;
+            border-top: 1px solid rgba(93, 155, 255, 0.1);
+            text-align: center;
+            color: #A0A8B5;
+            font-size: 14px;
+        }
+        .footer a { color: #A0A8B5; text-decoration: none; }
+        .footer a:hover { color: #5D9BFF; }
+        h1, h2, h3 { text-align: center; }
+
+        @media (max-width: 980px) {
+            .header .container {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .nav {
+                display: none;
+                flex-direction: column;
+                gap: 14px;
+                width: 100%;
+                padding: 16px;
+                background: rgba(10, 12, 15, 0.95);
+                border: 1px solid rgba(93, 155, 255, 0.2);
+                border-radius: 16px;
+            }
+
+            .nav.open {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .header-contacts {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-small h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .grid-3,
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-small h1 {
+                font-size: 32px;
+            }
+
+            .hero-small .subhead {
+                font-size: 16px;
+            }
+        }
+        .feature-list { text-align: center; list-style-position: inside; padding-left: 0; }
+        .feature-list li { margin-left: 0; }
+        /* Center override */
+        body { text-align: center; }
+        h1, h2, h3, p, li { text-align: center; }
+        .card, .section, .container { text-align: center; }
+        .card p, .feature-list { text-align: center !important; }
+        .feature-list { list-style: disc; list-style-position: inside; padding-left: 0; }
+        .feature-list li { padding-left: 0; }
+        .feature-list li::before { content: none; }        /* Unified spacing */
+        :root {
+            --space-1: 8px;
+            --space-2: 12px;
+            --space-3: 16px;
+            --space-4: 24px;
+            --space-5: 32px;
+            --space-6: 40px;
+            --space-7: 56px;
+        }
+        .section { padding: var(--space-7) 0; }
+        .section-title { margin-bottom: var(--space-3); }
+        .section-sub { margin-bottom: var(--space-5); }
+        h1, h2, h3, h4 { margin: 0 0 var(--space-3); }
+        p { margin: 0 0 var(--space-2); }
+        p:last-child { margin-bottom: 0; }
+        .card-title,
+        .card-title-light { margin-bottom: var(--space-2); }
+        .feature-list { margin: var(--space-3) 0; }
+        .grid-2, .grid-3, .grid-4 { margin: var(--space-4) 0; }        /* FX: modern cosmic glow */
+        .fx-bg {
+            position: fixed;
+            inset: -10%;
+            background: linear-gradient(120deg, rgba(93, 155, 255, 0.14), rgba(189, 122, 255, 0.12), rgba(10, 12, 15, 0.2));
+            background-size: 200% 200%;
+            animation: gradientShift 18s ease infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .fx-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(0deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 2px),
+                linear-gradient(90deg, rgba(0,0,0,0.02) 0, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 2px);
+            background-size: 3px 3px;
+            opacity: 0.35;
+            mix-blend-mode: soft-light;
+        }
+        #particles-js { z-index: 1; }
+        .wrapper { z-index: 2; }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* Premium UI */
+        h1, h2, h3 { letter-spacing: -0.02em; }
+        .card, .service-card, .stat-card, .case-item, .review-card, .faq-item {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(93, 155, 255, 0.12);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            will-change: transform;
+        }
+        .card:hover, .service-card:hover, .stat-card:hover, .case-item:hover, .review-card:hover, .faq-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(93, 155, 255, 0.28);
+        }
+        .btn, .btn-outline, .service-link {
+            transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease, color 0.35s ease;
+        }
+        .btn:hover, .btn-outline:hover, .service-link:hover {
+            transform: translateY(-2px);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; }
+        }
+        /* Luxury Header */
+        .header {
+            position: sticky;
+            background: rgba(10, 12, 15, 0.78);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+            border-bottom: 1px solid rgba(93, 155, 255, 0.18);
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(93,155,255,0.08), rgba(189,122,255,0.06), rgba(93,155,255,0.08));
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .header .container { gap: 20px; }
+        .nav a {
+            position: relative;
+            padding: 6px 0;
+            font-weight: 600;
+        }
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -6px;
+            height: 2px;
+            background: linear-gradient(90deg, #5D9BFF, #BD7AFF);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .nav a:hover::after,
+        .nav a.active::after {
+            transform: scaleX(1);
+        }
+        .nav-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 8, 12, 0.6);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 9;
+        }
+        body.nav-open .nav-backdrop {
+            opacity: 1;
+            visibility: visible;
+        }
+        @media (max-width: 900px) {
+            .header { backdrop-filter: blur(14px); }
+            .phone-link { display: none; }
+            .nav {
+                position: fixed;
+                top: 72px;
+                right: 16px;
+                left: 16px;
+                flex-direction: column;
+                gap: 12px;
+                background: rgba(10, 12, 15, 0.98);
+                border: 1px solid rgba(93, 155, 255, 0.25);
+                padding: 16px;
+                border-radius: 18px;
+                box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+                opacity: 0;
+                transform: translateY(-10px);
+                pointer-events: none;
+                z-index: 10;
+            }
+            .nav.open {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .nav a { padding: 10px 8px; }
+        }
+        /* Header Unified */
+        .header {
+            padding: 16px 0;
+            pointer-events: auto;
+            border-bottom: 1px solid rgba(93, 155, 255, 0.18);
+            backdrop-filter: blur(14px);
+            background: rgba(10, 12, 15, 0.78);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(93,155,255,0.08), rgba(189,122,255,0.06), rgba(93,155,255,0.08));
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+        .nav a {
+            color: #E0E4E9;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            position: relative;
+            padding: 6px 0;
+            transition: color 0.3s;
+        }
+        .nav a:hover { color: #5D9BFF; text-shadow: 0 0 12px rgba(93, 155, 255, 0.6), 0 0 24px rgba(189, 122, 255, 0.35); }
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -6px;
+            height: 2px;
+            background: linear-gradient(90deg, #5D9BFF, #BD7AFF);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .nav a:hover::after,
+        .nav a.active::after {
+            transform: scaleX(1);
+        }
+        .nav-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            border: 1px solid rgba(93, 155, 255, 0.35);
+            background: rgba(20, 24, 28, 0.7);
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .nav-toggle:hover {
+            border-color: #5D9BFF;
+            transform: translateY(-1px);
+        }
+        .nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #E0E4E9;
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .phone-link {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .phone-link:hover { color: #5D9BFF; }
+        .tg-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #5D9BFF;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        .tg-link:hover {
+            background: #BD7AFF;
+            transform: translateY(-2px);
+        }
+        .tg-link svg { width: 20px; height: 20px; fill: #0A0C0F; }
+        .nav-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 8, 12, 0.6);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 9;
+        }
+        body.nav-open .nav-backdrop {
+            opacity: 1;
+            visibility: visible;
+        }
+        @media (max-width: 900px) {
+            .phone-link { display: none; }
+            .nav {
+                position: fixed;
+                top: 72px;
+                right: 16px;
+                left: 16px;
+                flex-direction: column;
+                gap: 12px;
+                background: rgba(10, 12, 15, 0.98);
+                border: 1px solid rgba(93, 155, 255, 0.25);
+                padding: 16px;
+                border-radius: 18px;
+                box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+                opacity: 0;
+                transform: translateY(-10px);
+                pointer-events: none;
+                z-index: 10;
+            }
+            .nav.open {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .nav a { padding: 10px 8px; }
+            .nav-toggle { display: inline-flex; }
+        }
+.wrapper p:hover,
+        .wrapper li:hover,
+        .wrapper .section-title:hover,
+        .wrapper .section-sub:hover,
+        .wrapper .card-title:hover,
+        .wrapper .card-title-light:hover,
+        .wrapper .service-title:hover,
+        .wrapper .service-desc:hover,
+        .wrapper .contact-link:hover {
+            color: #E6F0FF;
+            text-shadow: 0 0 10px rgba(93, 155, 255, 0.35), 0 0 18px rgba(189, 122, 255, 0.25);
+        }        /* Text spotlight */
+        .spotlight-host {
+            position: relative;
+        }
+        .spotlight-host::after {
+            content: attr(data-spotlight);
+            position: absolute;
+            inset: 0;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(93, 155, 255, 0.55), 0 0 22px rgba(189, 122, 255, 0.35);
+            -webkit-mask-image: radial-gradient(60px circle at var(--mx) var(--my), #000 0%, #000 40%, transparent 70%);
+            mask-image: radial-gradient(60px circle at var(--mx) var(--my), #000 0%, #000 40%, transparent 70%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.12s ease;
+            white-space: pre-wrap;
+            font: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            text-transform: inherit;
+        }
+        .spotlight-host.spotlight-on::after {
+            opacity: 1;
+        }        .max-float {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            padding: 14px 16px;
+            border-radius: 999px;
+            background: #0f172a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 9999;
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
+        }
+        .max-float:hover { transform: translateY(-1px); }
+        /* Hide Yandex Metrika informer */
+        .ym-advanced-informer,
+        #ym-advanced-informer,
+        .yandex-metrika-informer,
+        a[href*="metrika.yandex.ru"] img[src*="informer"] {
+            display: none !important;
+        }
+</style>
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0b0f17">
+</head>
+<body>
+
+    <div class="fx-bg"></div>
+    <div id="particles-js"></div>
+
+    <div class="wrapper">
+                <header class="header">
+            <div class="container">
+                <a href="/" class="logo">PFmarketing.ru</a>
+                <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <a href="/avitolog/">Авитолог</a>
+                    <a href="/pf/">ПФ и отзывы</a>
+                    <a href="/audit/">Аудит</a>
+                    <a href="/sites/">Сайты под ключ</a>
+                    <a href="/prices/" class="active">Цены</a>
+                    <a href="/contacts/">Контакты</a>
+                </nav>
+                <div class="header-contacts">
+                    <a href="tel:+79898219218" class="phone-link">+7 989 821-92-18</a>
+                    <a href="https://t.me/avitop_pro_owner" target="_blank" class="tg-link" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248c-.183 1.92-.978 6.58-1.382 8.728-.171.912-.51 1.217-.837 1.247-.712.066-1.252-.47-1.942-.922-1.078-.706-1.688-1.145-2.735-1.834-1.21-.796-.426-1.234.264-1.95.18-.187 3.286-3.012 3.346-3.27.007-.032.014-.15-.056-.212-.07-.063-.173-.042-.248-.024-.106.025-1.79 1.137-5.053 3.34-.478.328-.91.488-1.298.48-.427-.01-1.25-.242-1.862-.44-.75-.244-1.346-.373-1.294-.787.027-.216.325-.438.893-.664 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.1-.002.323.023.468.14.117.097.15.226.166.318.015.092.034.302.019.466z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-backdrop" aria-hidden="true"></div>
+        </header>
+
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="/">Главная</a> / <span>Цены</span>
+            </div>
+        </div>
+
+        <main>
+            <div class="container">
+                <section class="hero-small">
+                    <h1>Цены на услуги PFmarketing</h1>
+                    <p class="subhead">Собрали все тарифы и услуги в одном месте. Выберите направление и отправьте заявку — ответим в течение дня.</p>
+                    <div class="hero-actions">
+                        <a href="/contacts/" class="btn btn-large">Оставить заявку</a>
+                        <a href="#pf" class="btn btn-outline btn-large">ПФ и отзывы</a>
+                    </div>
+                </section>
+
+                <section class="section" id="avitolog">
+                    <h2 class="section-title">Авитолог</h2>
+                    <p class="section-sub">Продвижение аккаунтов и объявлений на Авито с фокусом на безопасность и рост позиций. Ниже — авитолог цена и услуги, если нужно быстро продвинуть авито.</p>
+                    <div class="grid-3">
+                        <div class="card">
+                            <h3 class="card-title-light">Накрутка ПФ</h3>
+                            <div class="price">от 5 ₽ <small>/шт</small></div>
+                            <p style="color: #A0A8B5;">Поведенческие факторы высокого качества. Заказ от 20 шт/день — авито пф для роста заявок.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Накрутка отзывов</h3>
+                            <div class="price">5 990 ₽</div>
+                            <p style="color: #A0A8B5;">Реальные отзывы, которые не слетают. Гарантия.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Аудит профиля</h3>
+                            <div class="price">2 990 ₽</div>
+                            <p style="color: #A0A8B5;">Полный разбор аккаунта, объявлений и конкурентов.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Обучение</h3>
+                            <div class="price">29 990 ₽</div>
+                            <p style="color: #A0A8B5;">Алгоритмы, стратегии, фишки. Стань авитологом сам.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Стратегия</h3>
+                            <div class="price">9 990 ₽</div>
+                            <p style="color: #A0A8B5;">Индивидуальный план продвижения под ваш бизнес.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Ведение под ключ</h3>
+                            <div class="price">от 19 900 ₽</div>
+                            <p style="color: #A0A8B5;">Полное управление рекламой и ПФ. Отчеты 24/7.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Консультация «вопрос-ответ»</h3>
+                            <div class="price">4 990 ₽ <small>/час</small></div>
+                            <p style="color: #A0A8B5;">Час плотной работы по вашему аккаунту. Разбираем всё до мелочей.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="pf">
+                    <h2 class="section-title">ПФ и отзывы</h2>
+                    <p class="section-sub">Тарифы по поведенческим факторам, сопровождение и оформление объявлений. Здесь собраны решения, чтобы поднять объявление на авито и подобрать прозрачную поднять объявление на авито цена.</p>
+
+                    <h3 class="section-subtitle">Тарифы на ПФ</h3>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="badge">Хит продаж</div>
+                            <h3 class="card-title-light">Премиум ПФ <small>для услуг</small></h3>
+                            <div class="price">от 5₽ <small>/ за 1 ПФ</small></div>
+                            <ul class="feature-list">
+                                <li>3 минуты на объявлении</li>
+                                <li>Просмотр фото и видео</li>
+                                <li>Просмотр контакта</li>
+                                <li>Просмотр геолокации</li>
+                                <li>Кнопка «читать далее»</li>
+                                <li>Читает описание</li>
+                                <li>Добавляет в избранное</li>
+                                <li>Переходит в отзывы</li>
+                                <li>Переход в профиль</li>
+                            </ul>
+                            <div class="card-note">🎁 Бонус: стратегия продвижения</div>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Премиум ПФ <small>для товаров</small></h3>
+                            <div class="price">от 5₽ <small>/ за 1 ПФ</small></div>
+                            <ul class="feature-list">
+                                <li>4-5 минут на объявлении</li>
+                                <li>Просмотр фото и видео</li>
+                                <li>Просмотр контакта</li>
+                                <li>Кнопка «читать далее»</li>
+                                <li>Читает описание</li>
+                                <li>Добавляет в избранное</li>
+                            </ul>
+                            <div class="card-note">🎁 Бонус: стратегия продвижения</div>
+                        </div>
+                    </div>
+                    <p style="color: #8FA7D9; margin-top: 16px;">Если нужно авито продвижение объявления и авито поднять просмотры — подберем оптимальный пакет под вашу нишу.</p>
+
+                    <h3 class="section-subtitle">Комплексные услуги</h3>
+                    <div class="grid-2">
+                        <div class="card">
+                            <h3 class="card-title-light">Консультация</h3>
+                            <div class="price">5 000₽</div>
+                            <p style="color: #A0A8B5;">Часовая консультация: оформление аккаунта, продающие объявления, платное продвижение.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Наставничество</h3>
+                            <div class="price">150 000₽</div>
+                            <p style="color: #A0A8B5;">Помощь в развитии, продвижение на Авито, создание контента, стратегии. Выход на 13 000₽/день.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Запуск проекта</h3>
+                            <div class="price">50 000₽</div>
+                            <p style="color: #A0A8B5;">Анализ рынка, выбор ниши, работа с поставщиками, тесты, стратегии. Запуск за 2 недели.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Самовыкуп товаров</h3>
+                            <div class="price">1 000₽</div>
+                            <p style="color: #A0A8B5;">Быстрый и безопасный самовыкуп для повышения видимости товаров.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-subtitle">Создание и оформление объявлений</h3>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="badge">−37%</div>
+                            <h3 class="card-title-light">Продающие объявления</h3>
+                            <div class="price">2 500₽ <small style="text-decoration: line-through; color: #6B7280;">3 990₽</small></div>
+                            <ul class="feature-list">
+                                <li>Анализ рынка и ЦА</li>
+                                <li>Ключевые преимущества</li>
+                                <li>SEO-оптимизация</li>
+                                <li>Инфографика на фото</li>
+                                <li>🎁 10 ПФ в подарок</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Разработка объявления</h3>
+                            <div class="price">15 000₽</div>
+                            <ul class="feature-list">
+                                <li>Глубокий анализ конкурентов</li>
+                                <li>Выявление преимуществ</li>
+                                <li>Уникальный SEO-текст</li>
+                                <li>Инфографика на 2 фото</li>
+                                <li>Топ при мин. затратах</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Инфографика</h3>
+                            <div class="price">1 000₽</div>
+                            <p style="color: #A0A8B5;">Продающий заголовок на фото. Вовлечение клиента по алгоритмам площадки.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title-light">Ключевые слова</h3>
+                            <div class="price">1 000₽</div>
+                            <p style="color: #A0A8B5;">Подбор ключевых слов для максимальной видимости объявлений.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="sites">
+                    <h2 class="section-title">Сайты под ключ</h2>
+                    <p class="section-sub">Разработка сайтов и сложных digital-продуктов с учетом задач бизнеса.</p>
+                    <div class="grid-3">
+                        <div class="card">
+                            <div class="badge">Старт</div>
+                            <h3 class="card-title-light">Сайт-визитка / Лендинг</h3>
+                            <div class="price">от 50 000 ₽</div>
+                            <ul class="feature-list">
+                                <li>Уникальный дизайн</li>
+                                <li>Адаптивная верстка</li>
+                                <li>SEO-оптимизация базовая</li>
+                                <li>Форма обратной связи</li>
+                                <li>Подключение аналитики</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Адаптив</span>
+                            </div>
+                        </div>
+                        <div class="card" style="border-color: #5D9BFF;">
+                            <div class="badge badge-purple">Популярное</div>
+                            <h3 class="card-title-light">Интернет-магазин / Каталог</h3>
+                            <div class="price">от 150 000 ₽</div>
+                            <ul class="feature-list">
+                                <li>Каталог товаров с фильтрами</li>
+                                <li>Корзина и оформление заказа</li>
+                                <li>Интеграция с платежными системами</li>
+                                <li>Личный кабинет пользователя</li>
+                                <li>Админка для управления</li>
+                                <li>CRM-интеграция (Битрикс24, amoCRM)</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React/Vue</span>
+                                <span class="tech-tag">Node.js/PHP</span>
+                                <span class="tech-tag">MySQL/PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="badge">Под ключ</div>
+                            <h3 class="card-title-light">Маркетплейс / Приложение</h3>
+                            <div class="price">от 300 000 ₽</div>
+                            <ul class="feature-list">
+                                <li>Сложная логика и несколько ролей</li>
+                                <li>Мобильное приложение (iOS/Android)</li>
+                                <li>Интеграция с 1С и внешними сервисами</li>
+                                <li>Высокая нагрузка и оптимизация</li>
+                                <li>Личные кабинеты для партнеров</li>
+                                <li>API для сторонних сервисов</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Node.js/Python</span>
+                                <span class="tech-tag">Docker/К8s</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="cta-block">
+                    <a href="/contacts/" class="btn btn-large">Получить расчет</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div>© 2023-2025 PFMarketing — Авитолог, ПФ, продвижение</div>
+                <div>+7 989 821-92-18 | @avitop_pro_owner</div>
+                <div>
+                    <a href="/privacy/">Политика конфиденциальности</a>
+                    <span> · </span>
+                    <a href="/sitemap/">Карта сайта</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: ['#5D9BFF', '#BD7AFF'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.6, random: true },
+                size: { value: 2.8, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 170,
+                    color: '#8AB4FF',
+                    opacity: 0.25,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1.2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: false },
+                    onclick: { enable: false },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        const toggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('.nav');
+
+        if (toggle && nav) {
+            toggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (nav.classList.contains('open')) {
+                        nav.classList.remove('open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        }
+    </script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107738668', 'ym');
+
+    ym(107738668, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107738668" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+    <script>
+        /* FX reveal */
+        (function () {
+            const targets = document.querySelectorAll(
+                '.section-title, .section-sub, .card, .service-card, .stat-card, .case-item, .review-card, .faq-item, .feature-list'
+            );
+            if (!('IntersectionObserver' in window)) {
+                targets.forEach(el => el.classList.add('reveal', 'in'));
+                return;
+            }
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal', 'in');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            targets.forEach(el => {
+                el.classList.add('reveal');
+                io.observe(el);
+            });
+        })();
+    </script>    <script>
+        /* Text spotlight */
+        (function () {
+            const selector = '.wrapper p, .wrapper li, .wrapper .section-title, .wrapper .section-sub, .wrapper .card-title, .wrapper .card-title-light, .wrapper .service-title, .wrapper .service-desc, .wrapper .contact-link';
+            const elements = Array.from(document.querySelectorAll(selector));
+            elements.forEach(el => {
+                const text = el.innerText;
+                if (!text) return;
+                el.classList.add('spotlight-host');
+                el.setAttribute('data-spotlight', text);
+            });
+
+            const onMove = (event) => {
+                const target = event.target.closest(selector);
+                if (!target) return;
+                const rect = target.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                target.classList.add('spotlight-on');
+                target.style.setProperty('--mx', x + 'px');
+                target.style.setProperty('--my', y + 'px');
+            };
+
+            elements.forEach(el => {
+                el.addEventListener('mousemove', onMove);
+                el.addEventListener('mouseleave', () => el.classList.remove('spotlight-on'));
+            });
+        })();
+    </script><a class="max-float" href="https://max.ru/u/f9LHodD0cOL5MEYcJJ7xlrCFJYKvoZpKB4P4n9tP_PN-sB2Hw7O-060-Raw" target="_blank" rel="noopener">Написать в MAX</a></body>
+</html>
+
+
+
+
+
+
