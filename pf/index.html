@@ -141,6 +141,8 @@
         .header .container {
 
             display: flex;
+            position: relative;
+            z-index: 2;
 
             justify-content: space-between;
 
@@ -203,6 +205,8 @@
                 .nav-toggle {
 
             display: none;
+            position: relative;
+            z-index: 30;
 
             width: 42px;
 
@@ -301,6 +305,8 @@
         .header-contacts {
 
             display: flex;
+            position: relative;
+            z-index: 2;
 
             align-items: center;
 
@@ -1852,6 +1858,8 @@
         .header .container {
 
             display: flex;
+            position: relative;
+            z-index: 2;
 
             justify-content: space-between;
 
@@ -1940,6 +1948,8 @@
         .nav-toggle {
 
             display: none;
+            position: relative;
+            z-index: 30;
 
             width: 42px;
 
@@ -1996,6 +2006,8 @@
         .header-contacts {
 
             display: flex;
+            position: relative;
+            z-index: 2;
 
             align-items: center;
 
@@ -2763,18 +2775,7 @@
                 document.body.classList.remove('nav-open');
 
             };
-
-
-
-            toggle.addEventListener('click', () => {
-
-                const isOpen = nav.classList.toggle('open');
-
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-
-                document.body.classList.toggle('nav-open', isOpen);
-
-            });
+            // Inline onclick handles opening/closing on the button itself.
 
 
 

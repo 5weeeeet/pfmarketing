@@ -62,7 +62,7 @@
 
         .nav a:hover { color: #5D9BFF; text-shadow: 0 0 12px rgba(93, 155, 255, 0.6), 0 0 24px rgba(189, 122, 255, 0.35); }
 
-        .nav-toggle { display: none; width: 42px; height: 42px; border-radius: 12px; border: 1px solid rgba(93, 155, 255, 0.35); background: rgba(20, 24, 28, 0.7); align-items: center; justify-content: center; gap: 5px; cursor: pointer; }
+        .nav-toggle { display: none; position: relative; z-index: 30; width: 42px; height: 42px; border-radius: 12px; border: 1px solid rgba(93, 155, 255, 0.35); background: rgba(20, 24, 28, 0.7); align-items: center; justify-content: center; gap: 5px; cursor: pointer; }
 
         .nav-toggle span { display: block; width: 20px; height: 2px; background: #E0E4E9; border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
 
@@ -484,6 +484,8 @@
         .header .container {
 
             display: flex;
+            position: relative;
+            z-index: 2;
 
             justify-content: space-between;
 
@@ -572,6 +574,8 @@
         .nav-toggle {
 
             display: none;
+            position: relative;
+            z-index: 30;
 
             width: 42px;
 
@@ -628,6 +632,8 @@
         .header-contacts {
 
             display: flex;
+            position: relative;
+            z-index: 2;
 
             align-items: center;
 
@@ -1091,14 +1097,7 @@
         const nav = document.querySelector('.nav');
 
         if (toggle && nav) {
-
-            toggle.addEventListener('click', () => {
-
-                const isOpen = nav.classList.toggle('open');
-
-                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-
-            });
+            // Inline onclick handles opening/closing on the button itself.
 
             nav.querySelectorAll('a').forEach(link => {
 
