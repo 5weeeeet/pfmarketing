@@ -898,7 +898,7 @@
 
                 <a href="/" class="logo">PFmarketing.ru</a>
 
-                <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+                <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" onclick="(function(btn){var nav=btn.nextElementSibling; if(nav&& !nav.classList.contains('nav')){nav=btn.parentElement.querySelector('.nav');} if(!nav) return; var open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); document.body.classList.toggle('nav-open', open);})(this)">
 
                     <span></span>
 
