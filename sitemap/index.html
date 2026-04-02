@@ -100,7 +100,7 @@
 
             .nav { display: none; flex-direction: column; gap: 14px; width: 100%; padding: 16px; background: rgba(10, 12, 15, 0.95); border: 1px solid rgba(93, 155, 255, 0.2); border-radius: 16px; }
 
-            .nav.open { display: flex; }
+            .nav.open { display: flex !important; }
 
             .nav-toggle { display: inline-flex; }
 
@@ -419,7 +419,7 @@
             }
 
             .nav.open {
-                display: flex;
+                display: flex !important;
                 opacity: 1;
                 transform: translateY(0);
                 pointer-events: auto;
@@ -734,7 +734,7 @@
             }
 
             .nav.open {
-                display: flex;
+                display: flex !important;
                 opacity: 1;
                 transform: translateY(0);
                 pointer-events: auto;
